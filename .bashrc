@@ -1,3 +1,7 @@
+#
+# Nate Bhurinat Wangsutthitham <nate.bwangsut@gmail.com>
+#
+
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
@@ -5,7 +9,10 @@ parse_git_branch() {
 alias ll="ls -ld .?*"
 
 export PATH="/usr/local/sbin:$PATH"
-export EDITOR=nvim
+
+# Use vim as SVN editor
+export EDITOR=vim
+export SVN_EDITOR=vim
 
 # Enable 'ls' Colour
 export CLICOLOR=1
