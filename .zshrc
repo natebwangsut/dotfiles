@@ -1,14 +1,18 @@
 #
-# Nate Bhurinat Wangsutthitham <nate.bwangsut@gmail.com>
+# Nate Bhurinat Wangsutthitham
+# @natebwangsut <nate.bwangsut@gmail.com>
 #
-# Use natebwangsut/dotfiles
-# if [[ -s "${ZDOTDIR:-$HOME}/github/dotfiles/init.zsh" ]]; then
-#  source "${ZDOTDIR:-$HOME}/github/dotfiles/init.zsh"
+# Use github.com/natebwangsut/dotfiles
+# if [[ -s "$HOME/github/dotfiles/.zshrc" ]]; then
+#   source "$HOME/github/dotfiles/.zshrc"
 # fi
 
 # Use GNU Coreutils
-PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
+export VISUAL="vim"
+export EDITOR="vim"
 
 # Alias
 alias ls='ls --color'
