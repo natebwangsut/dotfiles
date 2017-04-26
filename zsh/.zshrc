@@ -3,8 +3,8 @@
 # @natebwangsut <nate.bwangsut@gmail.com>
 #
 # Use github.com/natebwangsut/dotfiles
-# if [[ -s "$HOME/github/dotfiles/.zshrc" ]]; then
-#   source "$HOME/github/dotfiles/.zshrc"
+# if [[ -s "$HOME/github/dotfiles/zsh/.zshrc" ]]; then
+#   source "$HOME/github/dotfiles/zsh/.zshrc"
 # fi
 
 # Use GNU Coreutils
