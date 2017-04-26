@@ -11,8 +11,9 @@
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
+# Declare default editor
 export VISUAL="vim"
 export EDITOR="vim"
 
-# Alias
+# Turn colour on for all 'ls' command
 alias ls='ls --color'
