@@ -1,14 +1,12 @@
 #
-# Nate Bhurinat Wangsutthitham <nate.bwangsut@gmail.com>
+# Nate Bhurinat Wangsutthitham
+# @natebwangsut <nate.bwangsut@gmail.com>
 #
 
+# Parse gitbranch
 parse_git_branch() {
     git branch 2> /dev/null | sed -e '/^[^*]/d' -e 's/* \(.*\)/ (\1)/'
 }
-
-alias ll="ls -ld .?*"
-
-export PATH="/usr/local/sbin:$PATH"
 
 # Use vim as SVN editor
 export EDITOR=vim
@@ -20,3 +18,4 @@ export LSCOLORS=ExFxBxDxCxegedabagacad
 
 # Showing Current Branch in Terminal
 export PS1="\u@\h \[\033[32m\]\w\[\033[33m\]\$(parse_git_branch)\[\033[00m\] $ "
+
