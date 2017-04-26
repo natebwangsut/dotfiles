@@ -1,3 +1,3 @@
 # Dotfiles
 
-A collection of Dotfiles configurations for developing environment
+A collection of configurations for developing environment
