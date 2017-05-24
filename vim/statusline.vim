@@ -1,6 +1,6 @@
 " Statusline
 set noshowmode
-let g:currentmode={
+let g:currentmode = {
     \ 'n'  : 'N ',
     \ 'no' : 'N·Operator Pending ',
     \ 'v'  : 'V ',
@@ -25,13 +25,13 @@ let g:currentmode={
 " Automatically change the statusline color depending on mode
 function! ChangeStatuslineColor()
   if (mode() =~# '\v(n|no)')
-    exe 'hi! StatusLine ctermfg=008'
+    exe 'hi! StatusLine ctermfg=008 guifg=#686868'
   elseif (mode() =~# '\v(v|V)' || g:currentmode[mode()] ==# 'V·Block' || get(g:currentmode, mode(), '') ==# 't')
-    exe 'hi! StatusLine ctermfg=005'
+    exe 'hi! StatusLine ctermfg=005 guifg=#ed64bd'
   elseif (mode() ==# 'i')
-    exe 'hi! StatusLine ctermfg=004'
+    exe 'hi! StatusLine ctermfg=004 guifg=#74c5f9'
   else
-    exe 'hi! StatusLine ctermfg=006'
+    exe 'hi! StatusLine ctermfg=006 guifg=#acebfb'
   endif
 
   return ''
@@ -89,13 +89,13 @@ set statusline+=%8*\ %y\                                 " FileType
 set statusline+=%7*\ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]\ " Encoding & Fileformat
 set statusline+=%8*\ %-3(%{FileSize()}%)                 " File size
 set statusline+=%0*\ %3p%%\ \ %l:\ %3c\                 " Rownumber/total (%)
-"set statusline+=%0*\ %3p%%\ \|\ %l:\ %3c\                 " Rownumber/total (%)
+"set statusline+=%0*\ %3p%%\ \|\ %l:\ %3c\                " Rownumber/total (%)
 
 hi User1 ctermfg=007
-hi User2 ctermfg=008
-hi User3 ctermfg=008
-hi User4 ctermfg=008
-hi User5 ctermfg=008
-hi User7 ctermfg=008
-hi User8 ctermfg=008
+hi User2 ctermfg=008 guifg=#606060
+hi User3 ctermfg=008 guifg=#606060
+hi User4 ctermfg=008 guifg=#606060
+hi User5 ctermfg=008 guifg=#606060
+hi User7 ctermfg=008 guifg=#606060
+hi User8 ctermfg=008 guifg=#606060
 hi User9 ctermfg=007

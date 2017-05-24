@@ -21,17 +21,17 @@ set history=100
 
 " Add vim-plug
 if filereadable(glob("~/github/dotfiles/vim/plug.vim"))
-    source ~/github/dotfiles/vim/plug.vim
+  source ~/github/dotfiles/vim/plug.vim
 endif
 
 " Set statusline
 if filereadable(glob("~/github/dotfiles/vim/statusline.vim"))
-    source ~/github/dotfiles/vim/statusline.vim
+  source ~/github/dotfiles/vim/statusline.vim
 endif
 
 " Colour
-syntax on           " turn on syntax-highlighting
 set termguicolors   " 24-bit colors
+syntax on           " turn on syntax-highlighting
 
 
 " Transparent Background
@@ -52,6 +52,7 @@ set nopaste         " auto-indent off when pasting
 
 " User Interface
 set number                      " show line numbers
+set numberwidth=2               " keep the line number gutter narrow
 set showcmd                     " show command in the bottom bar
 set wildmenu
 filetype indent on              " load specific filetype indent
@@ -74,5 +75,5 @@ nnoremap <CR> :noh<CR><CR>
 
 " Others..
 if filereadable(glob("~/github/dotfiles/vim/others.vim"))
-    source ~/github/dotfiles/vim/others.vim
+  source ~/github/dotfiles/vim/others.vim
 endif

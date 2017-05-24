@@ -54,7 +54,7 @@ zstyle ':prezto:load' pmodule \
 #
 
 # Set the key mapping style to 'emacs' or 'vi'.
-zstyle ':prezto:module:editor' key-bindings 'vi'
+#zstyle ':prezto:module:editor' key-bindings 'emacs'
 
 # Auto convert .... to ../..
 zstyle ':prezto:module:editor' dot-expansion 'yes'
@@ -181,3 +181,7 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Integrate with iTerm2.
 zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+
+# Set the default session name:
+# zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
+

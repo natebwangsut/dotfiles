@@ -22,3 +22,6 @@ set clipboard=unnamed
 
 " Show filename in title
 set title
+
+" Allows zsh syntax-based folding
+let g:zsh_fold_enable=1

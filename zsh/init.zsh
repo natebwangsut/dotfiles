@@ -15,5 +15,8 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 export VISUAL="vim"
 export EDITOR="vim"
 
+export LC_ALL="en_US.UTF-8"
+export LANG="en_US.UTF-8"
+
 # Turn colour on for all 'ls' command
 alias ls='ls --color'
