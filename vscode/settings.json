@@ -1,0 +1,40 @@
+{
+    // Editor configurations
+    "editor.fontFamily": "SF Mono for Powerline, monospace",
+    "editor.fontSize": 11.5,
+    "editor.lineHeight": 22,
+    "editor.renderWhitespace": "boundary",
+    "editor.minimap.enabled": true,
+    "editor.cursorStyle": "line",
+    "editor.cursorBlinking": "solid",
+
+    // Files settings
+    "files.autoSave": "afterDelay",
+
+    // Settings for Auto Close Tag
+    "auto-close-tag.activationOnLanguage": [
+        "html",
+        "xml",
+        "php",
+        "javascript"
+    ],
+    "auto-close-tag.SublimeText3Mode": true,
+
+    // ETC.
+    "terminal.external.osxExec": "iTerm.app",
+
+    "workbench.colorTheme": "Monokai Dark Soda",
+    "workbench.iconTheme": "vscode-icons",
+    "window.zoomLevel": 0,
+    "editor.renderIndentGuides": false,
+
+    // Per August 2017 Update, increase the performance of linter
+    "C_Cpp.intelliSenseEngine": "Default",
+    "workbench.colorCustomizations": {
+        "activityBarBadge.background": "#007ACC",
+        "list.activeSelectionBackground": "#007ACC",
+        "scrollbarSlider.activeBackground": "#007ACC",
+        "progressBar.background": "#007ACC",
+        "tab.activeBorder": "#007ACC"
+    }
+}

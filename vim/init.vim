@@ -33,7 +33,6 @@ endif
 set termguicolors   " 24-bit colors
 syntax on           " turn on syntax-highlighting
 
-
 " Transparent Background
 hi Normal guibg=NONE ctermbg=NONE
 hi NonText guibg=NONE ctermbg=NONE
@@ -41,12 +40,11 @@ hi LineNr guibg=NONE ctermbg=NONE
 "hi SignColumn guibg=NONE ctermbg=NONE
 "hi VertSplit guibg=NONE ctermbg=NONE
 
-
 " Indentation [Spaces & Tabs]
-set tabstop=2       " number of spaces per TAB
-set softtabstop=2   " number of spaces in TAB when editing
+set tabstop=4       " number of spaces per TAB
+set softtabstop=4   " number of spaces in TAB when editing
 set expandtab       " TABS are spaces
-set shiftwidth=2    " set indent spaces when shifting
+set shiftwidth=4    " set indent spaces when shifting
 set autoindent      " auto-indent
 set nopaste         " auto-indent off when pasting
 
@@ -56,7 +54,7 @@ set numberwidth=2               " keep the line number gutter narrow
 set showcmd                     " show command in the bottom bar
 set wildmenu
 filetype indent on              " load specific filetype indent
-filetype plugin on              " load specific filetpye plugin
+filetype plugin on              " load specific filetype plugin
 set lazyredraw                  " only redraw if needed
 set showmatch                   " highlights matching () or {}
 set nowrap                      " no wordwarp

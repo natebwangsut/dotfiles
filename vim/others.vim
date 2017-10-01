@@ -24,4 +24,4 @@ set clipboard=unnamed
 set title
 
 " Allows zsh syntax-based folding
-let g:zsh_fold_enable=1
+"let g:zsh_fold_enable=1
