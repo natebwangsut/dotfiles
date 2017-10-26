@@ -31,6 +31,8 @@ endif
 
 " Colour
 set termguicolors   " 24-bit colors
+set background=dark
+set t_Co=256
 syntax on           " turn on syntax-highlighting
 
 " Transparent Background
