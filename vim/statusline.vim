@@ -77,19 +77,19 @@ endfunction
 
 set laststatus=2
 set statusline=
-set statusline+=%{ChangeStatuslineColor()}               " Changing the statusline color
-set statusline+=%0*\ %{toupper(g:currentmode[mode()])}   " Current mode
-"set statusline+=%8*\ [%n]                                " buffernr
-set statusline+=%8*\ %{GitInfo()}                        " Git Branch name
-set statusline+=%8*\ %<%F\ %{ReadOnly()}\ %m\ %w\        " File+path
+set statusline+=%{ChangeStatuslineColor()}                  " Changing the statusline color
+set statusline+=%0*\ %{toupper(g:currentmode[mode()])}      " Current mode
+"set statusline+=%8*\ [%n]                                   " buffernr
+set statusline+=%8*\ %{GitInfo()}                           " Git Branch name
+set statusline+=%8*\ %<%F\ %{ReadOnly()}\ %m\ %w\           " File+path
 set statusline+=%#warningmsg#
 set statusline+=%*
-set statusline+=%9*\ %=                                  " Space
-set statusline+=%8*\ %y\                                 " FileType
-set statusline+=%7*\ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]\ " Encoding & Fileformat
-set statusline+=%8*\ %-3(%{FileSize()}%)                 " File size
-set statusline+=%0*\ %3p%%\ \ %l:\ %3c\                 " Rownumber/total (%)
-"set statusline+=%0*\ %3p%%\ \|\ %l:\ %3c\                " Rownumber/total (%)
+set statusline+=%9*\ %=                                     " Space
+set statusline+=%8*\ %y\                                    " FileType
+set statusline+=%7*\ %{(&fenc!=''?&fenc:&enc)}\[%{&ff}]\    " Encoding & Fileformat
+set statusline+=%8*\ %-3(%{FileSize()}%)                    " File size
+set statusline+=%0*\ %3p%%\ \ %l:\ %3c\                    " Rownumber/total (%)
+"set statusline+=%0*\ %3p%%\ \|\ %l:\ %3c\                  " Rownumber/total (%)
 
 hi User1 ctermfg=007
 hi User2 ctermfg=008 guifg=#606060

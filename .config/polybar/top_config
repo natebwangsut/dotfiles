@@ -1,68 +1,66 @@
-;=====================================================
-;
-;   To learn more about how to configure Polybar
-;   go to https://github.com/jaagr/polybar
-;
-;   The README contains alot of information
-;
-;=====================================================
+
+; ~/.config/polybar/top_config
+; Nate Bhurinat Wangsutthitham
+; @natebwangsut | <nate.bwangsut@gmail.com>
 
 [colors]
 ;background = ${xrdb:color0:#222}
-background = #222
+;background = #222
+background = #00222222
 background-alt = #444
 ;foreground = ${xrdb:color7:#222}
 foreground = #dfdfdf
-foreground-alt = #555
+;foreground-alt = #555
+foreground-alt = #777
 primary = #ffb52a
 secondary = #e60053
 alert = #bd2c40
 
-[bar/example]
+[bar/top]
 ;monitor = ${env:MONITOR:HDMI0}
 width = 100%
-height = 27
+height = 25
 ;offset-x = 1%
 ;offset-y = 1%
-radius = 6.0
-fixed-center = false
+;radius = 6.0
+fixed-center = true
 
 background = ${colors.background}
 foreground = ${colors.foreground}
 
-line-size = 3
-line-color = #f00
+line-size = 0
 
-border-size = 4
+;border-size = 4
 border-color = #00000000
 
-padding-left = 0
+padding-left = 2
 padding-right = 2
 
 module-margin-left = 1
-module-margin-right = 2
+module-margin-right = 1
 
 ;font-0 = fixed:pixelsize=10;1
 ;font-0 = "SauceCodePro NerdFont:pixelsize=10;0"
-font-0 = "ProggyCleanTT Nerd Font;2"
-font-1 = unifont:fontformat=truetype:size=8:antialias=false;0
-font-2 = siji:pixelsize=10;0
+;font-0 = "ProggyCleanTTSZ Nerd Font;2"
+font-0 = "Misc Termsynu;1"
+font-1 = "RobotoMono Nerd Font;3"
+font-2 = unifont:fontformat=truetype:size=8:antialias=false;0
+font-3 = siji:pixelsize=10;0
 
 ;modules-left = bspwm
-modules-left =
-modules-center = xwindow
+modules-left = eth weather
+modules-center = date
 ;modules-right = filesystem xbacklight volume xkeyboard memory cpu battery temperature date powermenu
-modules-right = weather filesystem volume xkeyboard memory cpu temperature eth date powermenu
+modules-right = filesystem volume xkeyboard memory cpu temperature powermenu
 
-tray-position = right
+tray-position =
 tray-padding = 2
 ;tray-transparent = true
 ;tray-background = #0063ff
 
 ;wm-restack = bspwm
 ;wm-restack = i3
-
-;override-redirect = true
+override-redirect = false
 
 ;scroll-up = bspwm-desknext
 ;scroll-down = bspwm-deskprev
@@ -72,45 +70,6 @@ tray-padding = 2
 
 cursor-click = pointer
 cursor-scroll = ns-resize
-
-
-[module/weather]
-type = custom/script
-interval = 10
-format = <label>
-format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
-exec = ~/.config/polybar/weather
-
-[module/xwindow]
-type = internal/xwindow
-label = %title:0:40:...%
-
-[module/xkeyboard]
-type = internal/xkeyboard
-blacklist-0 = num lock
-
-format-prefix = "  "
-format-prefix-foreground = ${colors.foreground-alt}
-format-prefix-underline = ${colors.secondary}
-
-label-layout = %layout%
-label-layout-underline = ${colors.secondary}
-
-label-indicator-padding = 2
-;label-indicator-margin = 1
-label-indicator-background = ${colors.secondary}
-label-indicator-underline = ${colors.secondary}
-
-[module/filesystem]
-type = internal/fs
-interval = 25
-
-mount-0 = /
-
-label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
-label-unmounted = %mountpoint% not mounted
-label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/bspwm]
 type = internal/bspwm
@@ -131,15 +90,67 @@ label-empty = %index%
 label-empty-foreground = ${colors.foreground-alt}
 label-empty-padding = 2
 
+; i3 module
 [module/i3]
 type = internal/i3
-format = <label-state> <label-mode>
+
+; Only show workspaces defined on the same output as the bar
+;
+; Useful if you want to show monitor specific workspaces
+; on different bars
+;
+; Default: false
+pin-workspaces = false
+
+; This will split the workspace name on ':'
+; Default: false
+strip-wsnumbers = false
+
+; Sort the workspaces by index instead of the default
+; sorting that groups the workspaces by output
+; Default: false
 index-sort = true
+
+; Create click handler used to focus workspace
+; Default: true
+enable-click = true
+
+; Create scroll handlers used to cycle workspaces
+; Default: true
+enable-scroll = true
+
+; Wrap around when reaching the first/last workspace
+; Default: true
 wrapping-scroll = false
 
-; Only show workspaces on the same output as the bar
-;pin-workspaces = true
+; Set the scroll cycle direction
+; Default: true
+reverse-scroll = false
 
+; Use fuzzy (partial) matching on labels when assigning
+; icons to workspaces
+; Example: code;♚ will apply the icon to all workspaces
+; containing 'code' in the label
+; Default: false
+fuzzy-match = true
+
+; ws-icon-[0-9]+ = label;icon
+; NOTE: The label needs to match the name of the i3 workspace
+ws-icon-0 = 1;♚
+ws-icon-1 = 2;♛
+ws-icon-2 = 3;♜
+ws-icon-3 = 4;♝
+ws-icon-4 = 5;♞
+ws-icon-default = ♟
+
+; Available tags:
+;   <label-state> (default) - gets replaced with <label-(focused|unfocused|visible|urgent)>
+;   <label-mode> (default)
+format = <label-state> <label-mode>
+
+; Available tokens:
+;   %mode%
+; Default: %mode%
 label-mode-padding = 2
 label-mode-foreground = #000
 label-mode-background = ${colors.primary}
@@ -164,6 +175,45 @@ label-visible-padding = ${self.label-focused-padding}
 label-urgent = %index%
 label-urgent-background = ${module/bspwm.label-urgent-background}
 label-urgent-padding = ${module/bspwm.label-urgent-padding}
+
+[module/weather]
+type = custom/script
+interval = 10
+format = <label>
+format-prefix = "%{T1}  %{T-}"
+;format-prefix = "%{T1}  %{T-}"
+format-prefix-foreground = ${colors.foreground-alt}
+exec = ~/.config/polybar/weather
+
+[module/xwindow]
+type = internal/xwindow
+label = %title:0:40:...%
+
+[module/xkeyboard]
+type = internal/xkeyboard
+blacklist-0 = num lock
+
+format-prefix = "%{T1}  %{T-}"
+format-prefix-foreground = ${colors.foreground-alt}
+format-prefix-underline = ${colors.secondary}
+
+label-layout = %layout%
+label-layout-underline = ${colors.secondary}
+
+label-indicator-padding = 2
+;label-indicator-margin = 1
+label-indicator-background = ${colors.secondary}
+label-indicator-underline = ${colors.secondary}
+
+[module/filesystem]
+type = internal/fs
+interval = 25
+
+mount-0 = /
+
+label-mounted = %{F#0a81f5}%mountpoint%%{F-}: %percentage_used%%
+label-unmounted = %mountpoint% not mounted
+label-unmounted-foreground = ${colors.foreground-alt}
 
 [module/mpd]
 type = internal/mpd
@@ -209,7 +259,7 @@ card = intel_backlight
 type = internal/cpu
 interval = 2
 ;format-prefix = " "
-format-prefix = "  "
+format-prefix = "%{T1}  %{T-}"
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #f90000
 label = %percentage:2%%
@@ -218,10 +268,10 @@ label = %percentage:2%%
 type = internal/memory
 interval = 2
 ;format-prefix = " "
-format-prefix = "  "
+format-prefix = "%{T1}  %{T-}"
 format-prefix-foreground = ${colors.foreground-alt}
 format-underline = #4bffdc
-label = %percentage_used%%
+label = %percentage_used:2%%
 
 [module/wlan]
 type = internal/network
@@ -251,7 +301,8 @@ interface = enp3s0
 interval = 3.0
 
 format-connected-underline = #55aa55
-format-connected-prefix = " "
+;format-connected-prefix = "%{T1}  %{T-}"
+format-connected-prefix = "%{T1}  %{T-}"
 format-connected-prefix-foreground = ${colors.foreground-alt}
 label-connected = %local_ip%
 
@@ -266,11 +317,11 @@ type = internal/date
 interval = 5
 
 ;date = "%A, %d %B %Y "
-date = "%A, %d %B "
+date = "%A, %d %B %Y "
 date-alt = "%Y-%m-%d "
 
 time = %H:%M
-time-alt = %H:%M
+time-alt = %H:%M:%S
 
 ;format-prefix = 
 format-prefix =
@@ -283,14 +334,14 @@ label = %date%%time%
 type = internal/volume
 
 format-volume = <label-volume> <bar-volume>
-label-volume = 
+label-volume = "%{T1}%{T-}"
 label-volume-foreground = ${root.foreground}
 
-format-muted-prefix = " "
+format-muted-prefix = "%{T1} %{T-}"
 format-muted-foreground = ${colors.foreground-alt}
-label-muted = SOUND MUTED
+label-muted = "SOUND MUTED"
 
-bar-volume-width = 10
+bar-volume-width = 11
 bar-volume-foreground-0 = #55aa55
 bar-volume-foreground-1 = #55aa55
 bar-volume-foreground-2 = #55aa55
@@ -348,9 +399,9 @@ label = %temperature%
 label-warn = %temperature%
 label-warn-foreground = ${colors.secondary}
 
-ramp-0 = 
-ramp-1 = 
-ramp-2 = 
+ramp-0 = "%{T1}%{T-}"
+ramp-1 = "%{T1}%{T-}"
+ramp-2 = "%{T1}%{T-}"
 ramp-foreground = ${colors.foreground-alt}
 
 [module/powermenu]
@@ -361,7 +412,7 @@ expand-right = true
 format-spacing = 1
 
 ;label-open = 
-label-open = 
+label-open = "%{T1}%{T-}"
 label-open-foreground = ${colors.secondary}
 ;label-close =  cancel
 label-close = cancel
@@ -385,14 +436,34 @@ menu-2-1 = cancel
 menu-2-1-exec = menu-open-0
 
 [settings]
+; The throttle settings lets the eventloop swallow up til X events
+; if they happen within Y millisecond after first event was received.
+; This is done to prevent flood of update event.
+;
+; For example if 5 modules emit an update event at the same time, we really
+; just care about the last one. But if we wait too long for events to swallow
+; the bar would appear sluggish so we continue if timeout
+; expires or limit is reached.
+throttle-output = 5
+throttle-output-for = 10
+
+; Time in milliseconds that the input handler will wait between processing events
+throttle-input-for = 30
+
+; Reload upon receiving XCB_RANDR_SCREEN_CHANGE_NOTIFY events
 screenchange-reload = true
-;compositing-background = xor
-;compositing-background = screen
-;compositing-foreground = source
-;compositing-border = over
+
+; Compositing operators
+; @see: https://www.cairographics.org/manual/cairo-cairo-t.html#cairo-operator-t
+; compositing-background = over
+; compositing-foreground = xor
+; compositing-overline = over
+; compositing-underline = over
+; compositing-border = over
 
 [global/wm]
-margin-top = 5
+;padding-bottom = 2
+;margin-top = 5
 ;margin-bottom = 5
 
 ; vim:ft=dosini
