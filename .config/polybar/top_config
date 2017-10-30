@@ -178,7 +178,7 @@ label-urgent-padding = ${module/bspwm.label-urgent-padding}
 
 [module/weather]
 type = custom/script
-interval = 10
+interval = 20
 format = <label>
 format-prefix = "%{T1}  %{T-}"
 ;format-prefix = "%{T1}  %{T-}"
