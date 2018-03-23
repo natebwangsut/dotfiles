@@ -20,19 +20,21 @@ set hidden
 set history=100
 
 " Add vim-plug
-if filereadable(glob("~/github/dotfiles/vim/plug.vim"))
-  source ~/github/dotfiles/vim/plug.vim
+if filereadable(glob("$HOME/github/dotfiles/vim/plug.vim"))
+  source $HOME/github/dotfiles/vim/plug.vim
 endif
 
 " Set statusline
-if filereadable(glob("~/github/dotfiles/vim/statusline.vim"))
-  source ~/github/dotfiles/vim/statusline.vim
+if filereadable(glob("$HOME/github/dotfiles/vim/statusline.vim"))
+  source $HOME/github/dotfiles/vim/statusline.vim
 endif
 
 " Colour
-set termguicolors   " 24-bit colors
-set background=dark
+if v:version <= 800
+  set termguicolors   " 24-bit colors [vim8]
+endif
 set t_Co=256
+set background=dark
 syntax on           " turn on syntax-highlighting
 
 " Transparent Background
@@ -74,6 +76,6 @@ set hlsearch                    " highlights matches
 nnoremap <CR> :noh<CR><CR>
 
 " Others..
-if filereadable(glob("~/github/dotfiles/vim/others.vim"))
-  source ~/github/dotfiles/vim/others.vim
+if filereadable(glob("$HOME/github/dotfiles/vim/others.vim"))
+  source $HOME/github/dotfiles/vim/others.vim
 endif
