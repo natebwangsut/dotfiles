@@ -5,26 +5,44 @@ Windows Registry Editor Version 5.00
 ; Values stored as 00-BB-GG-RR
 [HKEY_CURRENT_USER\Console]
 ; BLACK DGRAY
+;"ColorTable00"=dword:000c0c0c
+;"ColorTable08"=dword:00767676
 "ColorTable00"=dword:000c0c0c
 "ColorTable08"=dword:00767676
 ; BLUE LBLUE
-"ColorTable01"=dword:000037DA
-"ColorTable09"=dword:003b78ff
+;"ColorTable01"=dword:000037DA
+;"ColorTable09"=dword:003b78ff
+"ColorTable01"=dword:00DA3700
+"ColorTable09"=dword:00ff783b
 ; GREEN LGREEN
-"ColorTable02"=dword:0013a10e
-"ColorTable10"=dword:0016c60c
+;"ColorTable02"=dword:0013a10e
+;"ColorTable10"=dword:0016c60c
+"ColorTable02"=dword:0003a113
+"ColorTable10"=dword:000cc616
 ; CYAN LCYAN
-"ColorTable03"=dword:003a96dd
-"ColorTable11"=dword:0061d6d6
+; CYAN LCYAN
+;"ColorTable03"=dword:003a96dd
+;"ColorTable11"=dword:0061d6d6
+"ColorTable03"=dword:00dd963a
+"ColorTable11"=dword:00d6d661
 ; RED LRED
-"ColorTable04"=dword:00c50f1f
-"ColorTable12"=dword:00e74856
+; RED LRED
+;"ColorTable04"=dword:00c50f1f
+;"ColorTable12"=dword:00e74856
+"ColorTable04"=dword:001f0fc5
+"ColorTable12"=dword:005648e7
 ; MAGENTA LMAGENTA
-"ColorTable05"=dword:00881798
-"ColorTable13"=dword:00b4009e
+;"ColorTable05"=dword:00881798
+;"ColorTable13"=dword:00b4009e
+"ColorTable05"=dword:00981788
+"ColorTable13"=dword:009e00b4
 ; YELLOW LYELLOW
-"ColorTable06"=dword:00c19c00
-"ColorTable14"=dword:00f9f1a5
+;"ColorTable06"=dword:00c19c00
+;"ColorTable14"=dword:00f9f1a5
+"ColorTable06"=dword:00009cc1
+"ColorTable14"=dword:00a5f1f9
 ; LGRAY WHITE
+;"ColorTable07"=dword:00cccccc
+;"ColorTable15"=dword:00f2f2f2
 "ColorTable07"=dword:00cccccc
 "ColorTable15"=dword:00f2f2f2
