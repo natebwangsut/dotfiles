@@ -1,0 +1,9 @@
+[submodule "vim/plugged/indentLine"]
+	path = vim/plugged/indentLine
+	url = https://github.com/Yggdroot/indentLine
+[submodule "vim/plugged/vim-fugitive"]
+	path = vim/plugged/vim-fugitive
+	url = https://github.com/tpope/vim-fugitive
+[submodule "vim/plugged/vim-polyglot"]
+	path = vim/plugged/vim-polyglot
+	url = https://github.com/sheerun/vim-polyglot
