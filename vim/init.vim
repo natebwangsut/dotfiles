@@ -30,7 +30,7 @@ if filereadable(glob("$HOME/github/dotfiles/vim/statusline.vim"))
 endif
 
 " Colour
-if v:version <= 800
+if v:version <= 800 || has("nvim")
   set termguicolors   " 24-bit colors [vim8]
 endif
 set t_Co=256
