@@ -22,3 +22,7 @@
 	path = vim/plugged/deoplete.nvim
 	url = https://github.com/Shougo/deoplete.nvim
 	branch = master
+[submodule "zsh/prezto"]
+	path = zsh/prezto
+	url = https://github.com/sorin-ionescu/prezto
+	branch = master

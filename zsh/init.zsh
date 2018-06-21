@@ -3,11 +3,11 @@
 # @natebwangsut <nate.bwangsut@gmail.com>
 #
 # Use github.com/natebwangsut/dotfiles
-# if [[ -s "$HOME/github/dotfiles/zsh/.zshrc" ]]; then
-#   source "$HOME/github/dotfiles/zsh/.zshrc"
-# fi
+if [[ -s "$HOME/github/dotfiles/zsh/.zprezto/init.zsh" ]]; then
+  source "$HOME/github/dotfiles/zsh/.zprezto/init.zsh"
+fi
 
-# Use GNU Coreutils
+# [macOS] Use GNU Coreutils
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 
