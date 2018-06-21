@@ -4,11 +4,6 @@
 " https://github.com/natebwangsut
 "
 
-" Import init.vim
-"if filereadable(glob("~/github/dotfiles/vim/init.vim"))
-"    source ~/github/dotfiles/vim/init.vim
-"endif
-
 " No backward compatible
 set nocompatible
 
