@@ -3,8 +3,8 @@
 # @natebwangsut <nate.bwangsut@gmail.com>
 #
 # Use github.com/natebwangsut/dotfiles
-if [[ -s "$HOME/github/dotfiles/zsh/.zprezto/init.zsh" ]]; then
-  source "$HOME/github/dotfiles/zsh/.zprezto/init.zsh"
+if [[ -s "$HOME/github/dotfiles/zsh/prezto/init.zsh" ]]; then
+  source "$HOME/github/dotfiles/zsh/prezto/init.zsh"
 fi
 
 # [macOS] Use GNU Coreutils
