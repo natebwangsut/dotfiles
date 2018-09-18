@@ -16,6 +16,10 @@ export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
 #export ANDROID_SDK_ROOT='/usr/local/share/android-sdk'
 #alias emulator="${ANDROID_HOME}/emulator/emulator"
 
+# gnucoreutils
+export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
+export MANPATH="/usr/local/opt/coreutils/libexec/gnuman:$MANPATH"
+
 # Declare default editor
 export VISUAL="vim"
 export EDITOR="vim"

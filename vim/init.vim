@@ -24,10 +24,25 @@ if filereadable(glob("$HOME/github/dotfiles/vim/statusline.vim"))
   source $HOME/github/dotfiles/vim/statusline.vim
 endif
 
+" Let <Tab> also do completion
+function! Tab_Or_Complete()
+  if col('.')>1 && strpart( getline('.'), col('.')-2, 3 ) =~ '^\w'
+    return "\<C-N>"
+  else
+    return "\<Tab>"
+  endif
+endfunction
+
+inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
+"set dictionary="/usr/dict/words"
+
+
+
 " Colour
-if v:version <= 800 || has("nvim")
-  set termguicolors   " 24-bit colors [vim8]
-endif
+"if (v:version <= 800) || (has("nvim"))
+set termguicolors   " 24-bit colors [vim8]
+"endif
+
 set t_Co=256
 set background=dark
 syntax on           " turn on syntax-highlighting
@@ -48,8 +63,8 @@ set autoindent      " auto-indent
 set nopaste         " auto-indent off when pasting
 
 " User Interface
-set number                      " show line numbers
-set numberwidth=2               " keep the line number gutter narrow
+set number relativenumber
+set numberwidth=4               " keep the line number gutter narrow
 set showcmd                     " show command in the bottom bar
 set wildmenu
 filetype indent on              " load specific filetype indent
