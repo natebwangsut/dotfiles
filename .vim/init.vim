@@ -1,7 +1,7 @@
 "
 " Nate Bhurinat Wangsutthitham
 " @natebwangsut <nate.bwangsut@gmail.com>
-" https://github.com/natebwangsut
+" https://github.com/natebwangsut/dotfiles
 "
 
 " No backward compatible
@@ -15,13 +15,18 @@ set hidden
 set history=100
 
 " Add vim-plug
-if filereadable(glob("$HOME/github/dotfiles/vim/plug.vim"))
-  source $HOME/github/dotfiles/vim/plug.vim
+if filereadable(glob("$HOME/.vim/plug.vim"))
+  source $HOME/.vim/plug.vim
 endif
 
 " Set statusline
-if filereadable(glob("$HOME/github/dotfiles/vim/statusline.vim"))
-  source $HOME/github/dotfiles/vim/statusline.vim
+if filereadable(glob("$HOME/.vim/statusline.vim"))
+  source $HOME/.vim/statusline.vim
+endif
+
+" Set pastemode
+if filereadable(glob("$HOME/.vim/paste.vim"))
+  source $HOME/.vim/paste.vim
 endif
 
 " Let <Tab> also do completion
@@ -36,16 +41,17 @@ endfunction
 inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 "set dictionary="/usr/dict/words"
 
-
-
 " Colour
-"if (v:version <= 800) || (has("nvim"))
 set termguicolors   " 24-bit colors [vim8]
-"endif
-
 set t_Co=256
 set background=dark
 syntax on           " turn on syntax-highlighting
+
+" Fix colour palette for TERM=screen
+if &term =~# '^screen'
+    let &t_8f = "\<Esc>[38;2;%lu;%lu;%lum"
+    let &t_8b = "\<Esc>[48;2;%lu;%lu;%lum"
+endif
 
 " Transparent Background
 hi Normal guibg=NONE ctermbg=NONE
@@ -60,7 +66,7 @@ set softtabstop=4   " number of spaces in TAB when editing
 set expandtab       " TABS are spaces
 set shiftwidth=4    " set indent spaces when shifting
 set autoindent      " auto-indent
-set nopaste         " auto-indent off when pasting
+set paste           " auto-indent off when pasting
 
 " User Interface
 set number relativenumber
@@ -86,6 +92,6 @@ set hlsearch                    " highlights matches
 nnoremap <CR> :noh<CR><CR>
 
 " Others..
-if filereadable(glob("$HOME/github/dotfiles/vim/others.vim"))
-  source $HOME/github/dotfiles/vim/others.vim
+if filereadable(glob("$HOME/.vim/others.vim"))
+  source $HOME/.vim/others.vim
 endif
