@@ -1,6 +1,9 @@
 " vim-plug
 call plug#begin('~/.vim/plugged')
 
+" Install Vim Sensible
+Plug 'tpope/vim-sensible'
+
 " Install Vim Fugitive
 Plug 'tpope/vim-fugitive'
 

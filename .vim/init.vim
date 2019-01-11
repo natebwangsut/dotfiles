@@ -19,6 +19,10 @@ if filereadable(glob("$HOME/.vim/plug.vim"))
   source $HOME/.vim/plug.vim
 endif
 
+" Language Specific Settings
+filetype indent on              " load specific filetype indent
+filetype plugin on              " load specific filetype plugin
+
 " Set statusline
 if filereadable(glob("$HOME/.vim/statusline.vim"))
   source $HOME/.vim/statusline.vim
@@ -60,12 +64,19 @@ hi LineNr guibg=NONE ctermbg=NONE
 "hi SignColumn guibg=NONE ctermbg=NONE
 "hi VertSplit guibg=NONE ctermbg=NONE
 
+" Undo
+set undolevels=1000             " Set undo amount to 1000
+
 " Indentation [Spaces & Tabs]
-set tabstop=4       " number of spaces per TAB
-set softtabstop=4   " number of spaces in TAB when editing
-set expandtab       " TABS are spaces
-set shiftwidth=4    " set indent spaces when shifting
+set expandtab ts=4 sw=4 ai
+autocmd FileType * set expandtab
+"set expandtab       " TABS are spaces
+"set tabstop=4       " number of spaces per TAB
+"set shiftwidth=4    " set indent spaces when shifting
 set autoindent      " auto-indent
+set smartindent     " try to be smart about indenting (C-style)
+set shiftround      "  always round indents to multiple of shiftwidth
+set preserveindent  " save as much indent structure as possible
 set paste           " auto-indent off when pasting
 
 " User Interface
@@ -73,8 +84,6 @@ set number relativenumber
 set numberwidth=4               " keep the line number gutter narrow
 set showcmd                     " show command in the bottom bar
 set wildmenu
-filetype indent on              " load specific filetype indent
-filetype plugin on              " load specific filetype plugin
 set lazyredraw                  " only redraw if needed
 set showmatch                   " highlights matching () or {}
 set nowrap                      " no wordwarp

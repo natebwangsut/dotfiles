@@ -26,3 +26,6 @@
 	path = zsh/prezto
 	url = https://github.com/sorin-ionescu/prezto
 	branch = master
+[submodule ".vim/plugged/vim-sensible"]
+	path = .vim/plugged/vim-sensible
+	url = https://github.com/tpope/vim-sensible
