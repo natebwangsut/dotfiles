@@ -16,5 +16,8 @@ Plug 'Yggdroot/indentLine'
 " Install completor.vim
 Plug 'maralla/completor.vim'
 
+" Install arcticicestudio/nord-vim
+Plug 'arcticicestudio/nord-vim'
+
 "
 call plug#end()

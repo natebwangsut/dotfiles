@@ -5,6 +5,7 @@ let g:currentmode = {
     \ 'no' : 'N·Operator Pending ',
     \ 'v'  : 'V ',
     \ 'V'  : 'V·Line ',
+    \ '' : 'VB',
     \ '\<C-V>' : 'V·Block ',
     \ 's'  : 'Select ',
     \ 'S'  : 'S·Line ',
@@ -25,7 +26,7 @@ let g:currentmode = {
 " Automatically change the statusline color depending on mode
 function! ChangeStatuslineColor()
   if (mode() =~# '\v(n|no)')
-    exe 'hi! StatusLine ctermfg=008 guifg=#686868'
+    exe 'hi! StatusLine ctermfg=008 guifg=#aaaaaa'
   elseif (mode() =~# '\v(v|V)' || g:currentmode[mode()] ==# 'V·Block' || get(g:currentmode, mode(), '') ==# 't')
     exe 'hi! StatusLine ctermfg=005 guifg=#ed64bd'
   elseif (mode() ==# 'i')
