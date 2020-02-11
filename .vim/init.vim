@@ -48,9 +48,10 @@ inoremap <Tab> <C-R>=Tab_Or_Complete()<CR>
 " Colour
 set termguicolors   " 24-bit colors [vim8]
 set t_Co=256
+set t_ut=
+" colorscheme codedark
 set background=dark
 syntax on           " turn on syntax-highlighting
-colorscheme nord
 
 " Fix colour palette for TERM=screen
 if &term =~# '^screen'
@@ -111,6 +112,17 @@ set hlsearch                    " highlights matches
 " turn off search highlights - mapped into escape
 " This unsets the last search pattern register by hitting return
 nnoremap <CR> :noh<CR><CR>
+
+" Tree
+"let g:netrw_banner = 0
+"let g:netrw_liststyle = 3
+"let g:netrw_browse_split = 4
+"let g:netrw_altv = 1
+"let g:netrw_winsize = 25
+"augroup ProjectDrawer
+"  autocmd!
+"  autocmd VimEnter * :Vexplore
+"augroup END
 
 " Others..
 if filereadable(glob("$HOME/.vim/others.vim"))
