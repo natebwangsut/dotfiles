@@ -36,7 +36,6 @@ zstyle ':prezto:load' pmodule \
   'utility' \
   'completion' \
   'git' \
-  'tmux' \
   'homebrew' \
   'syntax-highlighting' \
   'history-substring-search' \
@@ -76,7 +75,7 @@ zstyle ':prezto:module:editor' key-bindings 'emacs'
 #
 
 # Ignore submodules when they are 'dirty', 'untracked', 'all', or 'none'.
-zstyle ':prezto:module:git:status:ignore' submodules 'all'
+# zstyle ':prezto:module:git:status:ignore' submodules 'all'
 
 #
 # GNU Utility
@@ -131,21 +130,21 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 # zstyle ':prezto:module:prompt' show-return-val 'yes'
 
 #
+# Python
+#
+
+# Auto switch the Python virtualenv on directory change.
+zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
+
+# Automatically initialize virtualenvwrapper if pre-requisites are met.
+# zstyle ':prezto:module:python:virtualenv' initialize 'yes'
+
+#
 # Ruby
 #
 
 # Auto switch the Ruby version on directory change.
 # zstyle ':prezto:module:ruby:chruby' auto-switch 'yes'
-
-#
-# Python
-#
-
-# Auto switch the Python virtualenv on directory change.
-# zstyle ':prezto:module:python:virtualenv' auto-switch 'yes'
-
-# Automatically initialize virtualenvwrapper if pre-requisites are met.
-# zstyle ':prezto:module:python:virtualenv' initialize 'yes'
 
 #
 # Screen
@@ -170,14 +169,14 @@ zstyle ':prezto:module:prompt' theme 'sorin'
 
 # Set syntax highlighters.
 # By default, only the main highlighter is enabled.
-zstyle ':prezto:module:syntax-highlighting' highlighters \
-  'main' \
-  'brackets' \
-  'pattern' \
-  'line' \
-  'cursor'
-#  'root'
-
+# zstyle ':prezto:module:syntax-highlighting' highlighters \
+#   'main' \
+#   'brackets' \
+#   'pattern' \
+#   'line' \
+#   'cursor' \
+#   'root'
+#
 # Set syntax highlighting styles.
 # zstyle ':prezto:module:syntax-highlighting' styles \
 #   'builtin' 'bg=blue' \
@@ -193,7 +192,7 @@ zstyle ':prezto:module:syntax-highlighting' highlighters \
 #
 
 # Auto set the tab and window titles.
-zstyle ':prezto:module:terminal' auto-title 'yes'
+# zstyle ':prezto:module:terminal' auto-title 'yes'
 
 # Set the window title format.
 # zstyle ':prezto:module:terminal:window-title' format '%n@%m: %s'
@@ -215,7 +214,7 @@ zstyle ':prezto:module:terminal' auto-title 'yes'
 # zstyle ':prezto:module:tmux:auto-start' remote 'yes'
 
 # Integrate with iTerm2.
-zstyle ':prezto:module:tmux:iterm' integrate 'yes'
+# zstyle ':prezto:module:tmux:iterm' integrate 'yes'
 
 # Set the default session name:
 # zstyle ':prezto:module:tmux:session' name 'YOUR DEFAULT SESSION NAME'
