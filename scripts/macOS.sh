@@ -16,8 +16,8 @@ defaults write com.apple.BluetoothAudioAgent "Negotiated Bitpool Min" 80
 # Check for Software Update daily
 defaults write com.apple.SoftwareUpdate ScheduleFrequency -int 1
 
-# TODO
-sudo tmutil disablelocal
+# Disable Local Time Machine Snapshots
+# sudo tmutil disablelocal
 
 # Disable hibernation in the favour of sleeping
 sudo pmset -a hibernatemode 0
@@ -36,3 +36,10 @@ defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
 
 # Disable pop-up for Time Machine when plugging in new disk
 defaults write com.apple.TimeMachine DoNotOfferNewDisksForBackup -bool true
+
+# Disable Long Pressed - Accenturated Characters
+defaults write -g ApplePressAndHoldEnabled -bool false
+
+# Change Screenshots Location
+mkdir -p ~/Screenshots
+defaults write com.apple.screencapture location ~/Screenshots

@@ -29,3 +29,6 @@
 [submodule ".vim/plugged/vim-sensible"]
 	path = .vim/plugged/vim-sensible
 	url = https://github.com/tpope/vim-sensible
+[submodule ".vim/plugged/vim-code-dark"]
+	path = .vim/plugged/vim-code-dark
+	url = https://github.com/tomasiser/vim-code-dark
