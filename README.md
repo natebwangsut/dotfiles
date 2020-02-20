@@ -18,8 +18,6 @@ ln -s $HOME/github/dotfiles/.vim $HOME
 
 > Configuring the most complex tool on the universe
 
-
-
 ```console
 git config --global -e
 ```
