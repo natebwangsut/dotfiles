@@ -20,7 +20,7 @@ export VISUAL=$EDITOR
 export LC_ALL="en_US.UTF-8"
 export LANG="en_US.UTF-8"
 
-# If macOS
+# Use GNU bins instead of BSD bins
 export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
 export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
@@ -35,12 +35,18 @@ alias ls='ls --color=auto'
 # Kubectl Alias
 alias k=kubectl
 
+# Tmux
+alias tmux-main="tmux attach || tmux new -s main"
+
 # Git Alias
 alias gst='git status'
-#alias gla='git log --all --decorate --oneline --graph'
-alias gla="git log --all --graph --pretty=format:'%C(auto)%h%C(auto)%d %s %C(dim white)(%aN, %ar)'"
+alias gla="git log --graph --pretty=format:'%C(auto)%h -%d %s %C(green)(%cr) %C(bold blue)[%an]%Creset'"
 alias gpu="git rev-parse --abbrev-ref HEAD | xargs git push -u origin"
-alias tmux-main="tmux attach || tmux new -s main"
+
+# For Go
+export GOPATH="${HOME}/.go"
+export GOROOT="$(brew --prefix golang)/libexec"
+export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 # Map Home -> Beginning and End -> EOL
 #bindkey "${terminfo[khome]}" beginning-of-line
@@ -51,19 +57,13 @@ alias tmux-main="tmux attach || tmux new -s main"
 
 #export PATH="/usr/local/opt/mysql-client/bin:$PATH"
 
-# Setup home for grrovy
+# Setup HOME for Groovy
 #export GROOVY_HOME=/usr/local/opt/groovy/libexec
 
 # Setup HOME for Dart
 #export PATH="$PATH":"$HOME/.pub-cache/bin"
 
-# For GRAALVM
+# Setup for GRAALVM
 # export JAVA_HOME=/Library/Java/JavaVirtualMachines/graalvm-ce-java8-19.3.0/Contents/Home
 # export PATH=/Library/Java/JavaVirtualMachines/graalvm-ce-java8-19.3.0/Contents/Home/bin:"$PATH"
-
-#test -e "${HOME}/.iterm2_shell_integration.zsh" && source "${HOME}/.iterm2_shell_integration.zsh"
-
-# iTerm2 Integration
-#iterm2_print_user_vars() {
-#  iterm2_set_user_var kubeContext $(kubectl config current-context)
-#}
+#
