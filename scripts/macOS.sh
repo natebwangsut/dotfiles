@@ -4,7 +4,6 @@
 #
 
 # Better Bluetooth audio quality
-
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Max (editable)" 80
 defaults write com.apple.BluetoothAudioAgent "Apple Bitpool Min (editable)" 80
 defaults write com.apple.BluetoothAudioAgent "Apple Initial Bitpool (editable)" 80
@@ -28,8 +27,8 @@ defaults write com.apple.screencapture disable-shadow -bool true
 # Enable font smoothing in non-Apple LCDs
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
-#
-sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
+# TODO: I don't remember what does it do anymore...
+sudo defaults write /Library/Preferences/com.apple.windowserver DispclayResolutionEnabled -bool true
 
 # Do not write .DS_Store files on network drives
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true

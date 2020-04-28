@@ -1,7 +1,11 @@
 #!/bin/sh
 
+#
+# Reset the author of all git commits
+#
+
 git filter-branch --env-filter '
-OLD_EMAIL="b.wangsutthitham@chanom.local"
+OLD_EMAIL="natebwangsut@gmail.com"
 CORRECT_NAME="natebwangsut"
 CORRECT_EMAIL="nate.bwangsut@gmail.com"
 if [ "$GIT_COMMITTER_EMAIL" = "$OLD_EMAIL" ]
