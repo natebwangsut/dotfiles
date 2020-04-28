@@ -53,9 +53,12 @@ git config --global -e
     ui = auto
 [commit]
     gpgsign = true
+# For macOS
+[credential]
+    helper = osxkeychain
+# Sub-folders specific
 [includeIf "gitdir:~/github/"]
     path = ~/github/.gitconfig
-# For more sub-folders
 [includeIf "gitdir:~/<FOLDER_PATH>"]
     path = ~/<FOLDER_PATH>/.gitconfig
 ```
