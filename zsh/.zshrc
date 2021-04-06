@@ -1,3 +1,9 @@
+#
+# ------------------------------------------------------------------------------
+# @natebwangust zsh shell
+# ------------------------------------------------------------------------------
+#
+
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
@@ -287,10 +293,6 @@ alias gla="git log --graph --pretty=format:'%C(auto)%h -%d %s %C(green)(%cr) %C(
 alias gpu="git rev-parse --abbrev-ref HEAD | xargs git push -u origin"
 alias git-clean-unreachable="git reflog expire --expire-unreachable=now --all && git gc --prune=now"
 
-# For Go
-export GOPATH="${HOME}/.go"
-export GOROOT="$(brew --prefix golang)/libexec"
-export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
 # For Python
 alias python=python3  # I use python3
@@ -339,34 +341,41 @@ kubectl () {
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# For jenv
-eval export PATH="/Users/bwangsutthit/.jenv/shims:${PATH}"
-export JENV_SHELL=zsh
-export JENV_LOADED=1
-unset JAVA_HOME
-source '/usr/local/Cellar/jenv/0.5.4/libexec/libexec/../completions/jenv.zsh'
-jenv rehash 2>/dev/null
-jenv() {
-  typeset command
-  command="$1"
-  if [ "$#" -gt 0 ]; then
-    shift
-  fi
-
-  case "$command" in
-  enable-plugin|rehash|shell|shell-options)
-    eval `jenv "sh-$command" "$@"`;;
-  *)
-    command jenv "$command" "$@";;
-  esac
-}
-
-
 # Nvm
 export NVM_DIR="$HOME/.nvm"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 alias nvm="unalias nvm; [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"; [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"; nvm $@" # Only load nvm when used
+
+################################################################################
+# Platform Specific Configuration
+################################################################################
+
+case "$(uname -s)" in
+   Darwin)
+     #echo 'macOS'
+
+     # For Go
+     export GOPATH="${HOME}/.go"
+     export GOROOT="$(brew --prefix golang)/libexec"
+     export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+     ;;
+
+   Linux)
+     #echo 'Linux'
+     ;;
+
+   CYGWIN*|MINGW32*|MSYS*|MINGW*)
+     echo 'MS Windows'
+     ;;
+
+   # Add here more strings to compare
+   # See correspondence table at the bottom of this answer
+
+   *)
+     echo 'Other OS' 
+     ;;
+esac
 
 ### Added by Zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
@@ -380,7 +389,6 @@ fi
 source "$HOME/.zinit/bin/zinit.zsh"
 autoload -Uz _zinit
 (( ${+_comps} )) && _comps[zinit]=_zinit
-
 ### End of Zinit's installer chunk
 
 zinit ice blockf atpull'zinit creinstall -q .'
