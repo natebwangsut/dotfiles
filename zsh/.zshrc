@@ -1,3 +1,10 @@
+# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
+# Initialization code that may require console input (password prompts, [y/n]
+# confirmations, etc.) must go above this block; everything else may go below.
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
+
 #
 # ------------------------------------------------------------------------------
 # @natebwangust zsh shell
@@ -363,17 +370,20 @@ case "$(uname -s)" in
 
    Linux)
      #echo 'Linux'
+     export GOPATH="${HOME}/.go"
+     #export GOROOT="${HOME}/.go/root"
+     export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
      ;;
 
    CYGWIN*|MINGW32*|MSYS*|MINGW*)
-     echo 'MS Windows'
+     #echo 'MS Windows'
      ;;
 
    # Add here more strings to compare
    # See correspondence table at the bottom of this answer
 
    *)
-     echo 'Other OS' 
+     echo 'Other OS'
      ;;
 esac
 
@@ -532,4 +542,3 @@ bindkey '^R' history-incremental-search-backward
 
 # For performance debugging
 # zprof
-
