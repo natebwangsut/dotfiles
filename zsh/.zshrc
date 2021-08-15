@@ -14,12 +14,26 @@ fi
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-#if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-#fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # For performance debugging
 #zmodload zsh/zprof
+
+# History
+# set history size
+export HISTSIZE=100000
+# save history after logout
+export SAVEHIST=100000
+# history file
+export HISTFILE=~/.zhistory
+# append into history file
+setopt INC_APPEND_HISTORY
+# save only one command if 2 common are same and consistent
+setopt HIST_IGNORE_DUPS
+# add timestamp for each entry
+setopt EXTENDED_HISTORY
 
 # Declare editor preference
 export EDITOR=vim
@@ -295,6 +309,7 @@ alias k=kubectl
 alias tmux-main="tmux attach || tmux new -s main"
 
 # Git Alias
+alias gfpt='git fetch origin --prune "+refs/tags/*:refs/tags/*"'
 alias gst='git status'
 alias gla="git log --graph --pretty=format:'%C(auto)%h -%d %s %C(green)(%cr) %C(bold blue)[%an]%Creset'"
 alias gpu="git rev-parse --abbrev-ref HEAD | xargs git push -u origin"
@@ -366,6 +381,10 @@ case "$(uname -s)" in
      export GOPATH="${HOME}/.go"
      export GOROOT="$(brew --prefix golang)/libexec"
      export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
+
+     # Installing MySQL client without MySQL server
+     # brew install mysql-client
+     export PATH="/usr/local/opt/mysql-client/bin:$PATH"
      ;;
 
    Linux)
@@ -402,10 +421,17 @@ autoload -Uz _zinit
 ### End of Zinit's installer chunk
 
 zinit ice blockf atpull'zinit creinstall -q .'
-zinit light zsh-users/zsh-completions
 
-zinit light zdharma/fast-syntax-highlighting
+zinit ice wait atload"_zsh_autosuggest_start" lucid
 zinit light zsh-users/zsh-autosuggestions
+
+zinit light zsh-users/zsh-history-substring-search
+
+zinit ice wait"5" atinit"zpcompinit; zpcdreplay" lucid
+zinit light zdharma/fast-syntax-highlighting
+
+#zinit light zsh-users/zsh-completions
+#zinit light zdharma/fast-syntax-highlighting
 
 zinit ice depth=1; zinit light romkatv/powerlevel10k
 
