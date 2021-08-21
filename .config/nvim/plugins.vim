@@ -9,7 +9,7 @@
 if has("nvim")
   let g:plug_home = stdpath('data') . '/plugged'
   if empty(g:plug_home)
-    silent !curl -fLo ~/.config/nvim/autoload/plug.vim --create-dirs
+    silent !curl -fLo ~/.local/share/nvim/site/autoload/plug.vim --create-dirs
           \ https://raw.githubusercontent.com/junegunn/vim-plug/master/plug.vim
     autocmd VimEnter * PlugInstall | source $MYVIMRC
   endif

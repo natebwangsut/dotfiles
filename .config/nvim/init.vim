@@ -11,7 +11,8 @@ runtime ./shift.vim                     " Load shift/tab configurations
 runtime ./trailing.vim                  " Load trailing spaces configurations
 
 " Lua Configurations
-luafile ~/.config/nvim/lualine.lua      " Load statusline
+luafile ~/.config/nvim/lua/plugins/lualine.lua
+" luafile ~/.config/nvim/lualine.lua      " Load statusline
 
 " Keep more info in memory to speed things up:
 set hidden
