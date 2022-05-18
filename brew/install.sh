@@ -18,8 +18,10 @@ brew install coreutils
 brew install vim
 brew install wget
 brew install ripgrep
-
 brew install gnu-sed
+
+brew install htop
+brew install glances
 
 # Containers
 brew install helm
@@ -34,22 +36,55 @@ brew install python
 brew install node
 brew install typescript
 
+# CLI Tools
+brew install jq yq
+
 ################################################################################
 # Casks
 ################################################################################
 
 # Music
-brew cask install spotify
+brew install --cask spotify
 
 # Messaging
-brew cask install discord
+brew install --cask discord
 
 # Browser
-brew cask install firefox
-brew cask install microsoft-edge
+brew install --cask firefox
+brew install --cask microsoft-edge
 
 # Development Tools
-brew cask install docker
-brew cask install fork
-brew cask install jetbrains-toolbox
-brew cask install visual-studio-eode
+brew install --cask docker
+brew install --cask fork
+brew install --cask jetbrains-toolbox
+brew install --cask visual-studio-code
+brew install --cask visual-studio-code-insiders
+
+# HTTP Client
+brew install --cask insomnia
+
+# Monitoring
+brew install --cask eul
+
+# Raycast - Alfred's alternative
+brew install --cask raycast
+
+################################################################################
+# Fonts
+################################################################################
+
+brew tap homebrew/cask-fonts
+
+#
+brew install font-dm-sans
+brew install font-lexend
+
+# Monospace
+brew install font-cascadia-code
+brew install font-cascadia-code-pl
+brew install font-dm-mono
+brew install font-fira-code
+brew install font-fira-code-nerd-font
+brew install font-inconsolata
+brew install font-jetbrains-mono-nerd-font
+brew install font-roboto-mono

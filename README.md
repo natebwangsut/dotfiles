@@ -37,6 +37,10 @@ TODO: Zsh speciic details
 
 TODO: Vim specific details
 
+### Neovim / Nvim
+
+Since we've migrated to nvchad framework, please see [.config/nvchad](.config/nvchad) folder.
+
 ### Git
 
 > Configuring the most complex tool on the universe

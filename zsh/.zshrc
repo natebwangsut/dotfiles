@@ -1,3 +1,4 @@
+
 #
 # .zshrc
 # @natebwangsut <nate.bwangsut@gmail.com>
@@ -81,7 +82,7 @@ alias python=python3  # I use python3
 # Nvm
 export NVM_DIR="$HOME/.nvm"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
-[ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
+# [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
 alias nvm="unalias nvm; [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"; [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"; nvm $@" # Only load nvm when used
 
 ################################################################################
@@ -103,6 +104,7 @@ case "$(uname -s)" in
         export PATH="/usr/local/opt/mysql-client/bin:$PATH"
         ;;
 
+    #
     Linux)
         #echo 'Linux'
         export GOPATH="${HOME}/.go"
@@ -110,6 +112,8 @@ case "$(uname -s)" in
         export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
         ;;
 
+    #
+    #
     CYGWIN*|MINGW32*|MSYS*|MINGW*)
         #echo 'MS Windows'
         ;;
@@ -160,8 +164,16 @@ zinit for \
     light-mode  zdharma-continuum/fast-syntax-highlighting \
                 zdharma-continuum/history-search-multi-word
 
-# Load prompts
+# Shallow clone then load p10k prompts
 zinit ice depth=1; zinit light romkatv/powerlevel10k
+
+# Load a few important annexes, without Turbo
+# (this is currently required for annexes)
+zinit for \
+    light-mode zdharma-continuum/z-a-rust \
+    light-mode zdharma-continuum/z-a-as-monitor \
+               zdharma-continuum/z-a-patch-dl \
+               zdharma-continuum/z-a-bin-gem-node
 
 # For performance debugging
 # zprof

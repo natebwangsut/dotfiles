@@ -28,7 +28,7 @@ defaults write com.apple.screencapture disable-shadow -bool true
 defaults write NSGlobalDomain AppleFontSmoothing -int 2
 
 # TODO: I don't remember what does it do anymore...
-sudo defaults write /Library/Preferences/com.apple.windowserver DispclayResolutionEnabled -bool true
+sudo defaults write /Library/Preferences/com.apple.windowserver DisplayResolutionEnabled -bool true
 
 # Do not write .DS_Store files on network drives
 defaults write com.apple.desktopservices DSDontWriteNetworkStores -bool true
@@ -42,3 +42,6 @@ defaults write -g ApplePressAndHoldEnabled -bool false
 # Change Screenshots Location
 mkdir -p ~/Screenshots
 defaults write com.apple.screencapture location ~/Screenshots
+
+# Disable Apple's Spotlight indexing
+sudo mdutil -a -i off
