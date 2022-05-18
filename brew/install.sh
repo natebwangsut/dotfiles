@@ -30,9 +30,7 @@ brew install kubectl
 
 # Development
 brew install go
-
 brew install python
-
 brew install node
 brew install typescript
 
@@ -63,7 +61,7 @@ brew install --cask visual-studio-code-insiders
 # HTTP Client
 brew install --cask insomnia
 
-# Monitoring
+# Laptop/PC Monitoring
 brew install --cask eul
 
 # Raycast - Alfred's alternative
@@ -75,9 +73,11 @@ brew install --cask raycast
 
 brew tap homebrew/cask-fonts
 
-#
+# Sans
 brew install font-dm-sans
+brew install font-inter
 brew install font-lexend
+brew isntall font-poppins
 
 # Monospace
 brew install font-cascadia-code
