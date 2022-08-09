@@ -29,11 +29,12 @@ brew install glances
 # Containers
 brew install helm
 brew install docker
-brew install kubectl
+brew install kubectl kubectx
 
 # Development
 brew install go
 brew install python
+brew install nvm
 brew install node
 brew install typescript
 
@@ -75,6 +76,7 @@ brew install --cask eul
 brew install --cask raycast
 
 # Windows management
+brew install --cask alt-tab
 brew install --cask rectangle-pro
 
 ################################################################################
