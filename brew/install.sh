@@ -14,10 +14,13 @@ brew update && brew upgrade
 brew tap beeftornado/rmtree
 
 # Utilities
+brew install zsh
 brew install coreutils
 brew install vim
+brew install neovim
 brew install wget
 brew install ripgrep
+brew install gnupg
 brew install gnu-sed
 
 brew install htop
@@ -41,6 +44,9 @@ brew install jq yq
 # Casks
 ################################################################################
 
+# Terminal
+brew install --cask iterm2
+
 # Music
 brew install --cask spotify
 
@@ -56,7 +62,8 @@ brew install --cask docker
 brew install --cask fork
 brew install --cask jetbrains-toolbox
 brew install --cask visual-studio-code
-brew install --cask visual-studio-code-insiders
+brew install --cask sublime-text
+# brew install --cask visual-studio-code-insiders # beta version of visual-studio-code
 
 # HTTP Client
 brew install --cask insomnia
@@ -67,17 +74,21 @@ brew install --cask eul
 # Raycast - Alfred's alternative
 brew install --cask raycast
 
+# Windows management
+brew install --cask rectangle-pro
+
 ################################################################################
 # Fonts
 ################################################################################
 
+# Tap into casks
 brew tap homebrew/cask-fonts
 
 # Sans
 brew install font-dm-sans
 brew install font-inter
 brew install font-lexend
-brew isntall font-poppins
+brew install font-poppins
 
 # Monospace
 brew install font-cascadia-code
@@ -86,5 +97,8 @@ brew install font-dm-mono
 brew install font-fira-code
 brew install font-fira-code-nerd-font
 brew install font-inconsolata
+brew install font-inconsolata-nerd-font
+brew install font-jetbrains-mono
 brew install font-jetbrains-mono-nerd-font
 brew install font-roboto-mono
+brew install font-roboto-mono-nerd-font
