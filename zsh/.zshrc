@@ -38,14 +38,17 @@ export VISUAL=$EDITOR
 export LANG="en_US.UTF-8"
 export LC_ALL=$LANG
 
+# Declare preferreed docker platform
+export DOCKER_DEFAULT_PLATFORM=linux/amd64
+
 # Use GNU bins instead of BSD bins
-export PATH="/usr/local/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/findutils/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-tar/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-indent/libexec/gnubin:$PATH"
-export PATH="/usr/local/opt/gnu-getopt/bin:$PATH"
-export PATH="/usr/local/opt/grep/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-indent/libexec/gnubin:$PATH"
+export PATH="$(brew --prefix)/opt/gnu-getopt/bin:$PATH"
+export PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
 
 # Turn colour on for all 'ls' command
 alias ls='ls --color=auto'
@@ -80,10 +83,15 @@ alias python=python3  # I use python3
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Nvm
-export NVM_DIR="$HOME/.nvm"
+# export NVM_DIR="$HOME/.nvm"
 # [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"  # This loads nvm
 # [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"  # This loads nvm bash_completion
-alias nvm="unalias nvm; [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"; [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"; nvm $@" # Only load nvm when used
+# alias nvm="unalias nvm; [ -s "/usr/local/opt/nvm/nvm.sh" ] && . "/usr/local/opt/nvm/nvm.sh"; [ -s "/usr/local/opt/nvm/etc/bash_completion.d/nvm" ] && . "/usr/local/opt/nvm/etc/bash_completion.d/nvm"; nvm $@" # Only load nvm when used
+
+export NVM_DIR="$HOME/.nvm"
+# [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && \. "$(brew --prefix)/opt/nvm/nvm.sh" # This loads nvm
+# [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && \. "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" # This loads nvm bash_completion
+alias nvm="unalias nvm; [ -s "$(brew --prefix)/opt/nvm/nvm.sh" ] && . "$(brew --prefix)/opt/nvm/nvm.sh"; [ -s "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm" ] && . "$(brew --prefix)/opt/nvm/etc/bash_completion.d/nvm"; nvm $@" # Only load nvm when used
 
 ################################################################################
 # Platform Specific Configuration
@@ -96,12 +104,12 @@ case "$(uname -s)" in
 
         # For Go
         export GOPATH="${HOME}/.go"
-        export GOROOT="/usr/local/opt/go/libexec"
+	export GOROOT="$(brew --prefix)/opt/go/libexec"
         export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
         # Installing MySQL client without MySQL server
         # brew install mysql-client
-        export PATH="/usr/local/opt/mysql-client/bin:$PATH"
+	# export PATH="$(brew --prefix)/opt/mysql-client/bin:$PATH"
         ;;
 
     #
