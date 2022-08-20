@@ -1,6 +1,9 @@
 #!/bin/sh
 
 #
+# git-reset-author.sh
+# @natebwangsut <nate.bwangsut@gmail.com>
+# ---
 # Reset the author of all git commits
 #
 

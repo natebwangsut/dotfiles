@@ -1,6 +1,9 @@
 #!/bin/bash
 
 #
+# setup.sh
+# @natebwangsut <nate.bwangsut@gmail.com>
+# ---
 # Setup .gitignore
 #
 

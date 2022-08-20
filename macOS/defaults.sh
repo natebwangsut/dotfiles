@@ -1,6 +1,10 @@
+#!/bin/sh
+
 #
-# Nate Bhurinat Wangsutthitham
+# defaults.sh
 # @natebwangsut <nate.bwangsut@gmail.com>
+# ---
+# Setup macOS configurations
 #
 
 # Better Bluetooth audio quality

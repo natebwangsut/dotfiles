@@ -1,158 +1,400 @@
 {
+  // Window
+  "breadcrumbs.enabled": true,
+  "window.commandCenter": true,
+
+  // Anti-aliasing
+  "workbench.fontAliasing": "auto",
+
+  // Start Roboto Mono
+  "editor.fontSize": 14, // looked OK on windows
+  "editor.fontFamily": "Roboto Mono, Roboto Mono Nerd Font, RobotoMono NF, SF Mono, Inconsolata Nerd Font, monospace",
+  "editor.fontWeight": "400",
+  "editor.fontLigatures": false,
+  // End Roboto Mono
+
+  // Start Cascadia Code
+  // See more: https://github.com/microsoft/cascadia-code
+  // "editor.fontFamily": "Cascadia Code PL, monospace", // for Windows
+  // "editor.fontLigatures": "'ss02', 'ss19', 'ss20'", // non-cursive
+  // "editor.fontLigatures": "'calt', 'ss01', 'ss02', 'ss19', 'ss20'", // cursive
+  // "editor.fontSize": 13,
+  // "editor.fontWeight": "300",
+  // End Cascadia Code
+
+  // Start Jetbrains Mono
+  // "editor.fontFamily": "Jetbrains Mono, monospace",
+  // "editor.fontWeight": "400",
+  // "editor.fontLigatures": true,
+  // End Jetbrains Mono
+
+  // Start Cartograph CF
+  // "editor.fontLigatures": "'calt', 'ss19', 'ss20'",
+  // End Catograph CF
+
+  "editor.accessibilitySupport": "off", // Colorising brackets
+  "editor.cursorBlinking": "smooth",
+  "editor.cursorSmoothCaretAnimation": true,
+  "editor.guides.bracketPairs": "active", // Showing brackets guide
+  "editor.guides.indentation": true,
+  "editor.inlineSuggest.enabled": true,
+  "editor.linkedEditing": true,
+  "editor.minimap.renderCharacters": false,
+  "editor.renderControlCharacters": true,
+  "editor.renderWhitespace": "trailing",
+  "editor.scrollBeyondLastLine": false,
+  "editor.smoothScrolling": true,
+  "editor.suggest.preview": true,
+  "editor.suggestSelection": "first",
+  "editor.tabCompletion": "on",
+  "editor.wordSeparators": "/\\()\"':,.;<>~!@#$%^&*|+=[]{}`?-", // Better words skipping
+  "editor.wordWrap": "off",
+
+  // Debugging Panel
+  "debug.console.fontSize": 14,
+  "debug.console.fontFamily": "Roboto Mono, SF Mono, Inconsolata Nerd Font, monospace",
+
+  // Terminal
+  // "terminal.integrated.shell.osx": "/usr/local/bin/zsh",
+  "terminal.integrated.tabs.enabled": true, // preview configuration
+  "terminal.integrated.scrollback": 10000,
+  "terminal.integrated.allowChords": false,
+
+  // Workbench
+  "workbench.editor.showTabs": true,
+  "workbench.editor.highlightModifiedTabs": true,
+  "workbench.list.smoothScrolling": true,
+  "workbench.settings.enableNaturalLanguageSearch": false, // disable bing search
+  "workbench.settings.useSplitJSON": true,
+  "workbench.startupEditor": "welcomePage",
+
+  // Extra
+  "explorer.confirmDelete": false,
+  "explorer.confirmDragAndDrop": false,
+  "files.autoSaveDelay": 300000,
+  "files.trimTrailingWhitespace": true,
+  "files.trimFinalNewlines": true,
+  "files.insertFinalNewline": true,
+  // JSON
+  "files.associations": {
+    "*.json": "jsonc",
+    "*.yml": "yaml"
+  },
+  "files.exclude": {
+      "**/__pycache__": true,
+      "**/.classpath": true,
+    "**/.factorypath": true,
+    "**/.project": true,
+    "**/.settings": true
+  },
+
+  // Icon
+  "workbench.iconTheme": "material-icon-theme",
+
+  // Telemetry reporter - not sending those to Microsoft
+  "telemetry.telemetryLevel": "off",
+  "telemetry.enableTelemetry": false,
+  "telemetry.enableCrashReporter": false,
+
+  // Git
+  "git.autofetch": true,
+  "git.confirmSync": false,
+  "git.enableSmartCommit": true,
+
+  // Diff
+  "diffEditor.ignoreTrimWhitespace": false,
+
+  // Default file configurations
+  "editor.tabSize": 2,
+
+  // CSS
+  "[css]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // YAML Language Configuration
+  "[yaml]": {
+    "editor.tabSize": 2,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "yaml.schemas": {
+    "https://json.schemastore.org/ansible-playbook": "deploy.yml"
+  },
+  "yaml.customTags": [
+    "!reference mapping",
+    "!reference scalar",
+    "!reference sequence"
+  ],
+
+  // Helm Template
+  "[helm-template]": {
+    "editor.tabSize": 2
+  },
+
+  // JSON
+  "[json]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[jsonc]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // HTML
+  "[html]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+
+  // Terraform Language Configuration
+  "[terraform]": {
+    "editor.tabSize": 2
+  },
+
+  // Markdown
+  "[markdown]": {
+    "editor.tabSize": 2,
     "editor.insertSpaces": true,
-    "editor.fontFamily": "Cascadia Code PL, SF Mono, Inconsolata Nerd Font, Menlo, Monaco, 'Courier New', monospace",
-    "editor.lineHeight": 20,
-    "editor.renderWhitespace": "boundary",
-    "editor.cursorStyle": "underline",
-    "editor.minimap.enabled": false,
-    "editor.fontLigatures": true,
-    "editor.wordWrap": "on",
+    // Do not trim whitespaces on markdown file - there might be a breakline character
+    "files.trimTrailingWhitespace": false,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "markdownlint.config": {
+    "MD041": false,
+    "MD033": false
+  },
+
+  // Javascript
+  "[javascript]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "javascript.updateImportsOnFileMove.enabled": "always", // does vscode also rename all imports for you
+
+  // Typescript
+  "[typescript]": {
+    "editor.tabSize": 4,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "[typescriptreact]": {
+    "editor.tabSize": 2,
+    "editor.insertSpaces": true,
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
+  "typescript.tsdk": "./node_modules/typescript/lib",
+  "typescript.updateImportsOnFileMove.enabled": "always", // does vscode also rename all imports for you
+
+  // Python
+  "[python]": {
+    "editor.tabSize": 4,
+    "editor.defaultFormatter": "ms-python.python"
+  },
+  "python.formatting.provider": "black",
+  "jupyter.askForKernelRestart": false,
+
+  // Dockerfile
+  "[dockerfile]": {
+    "editor.defaultFormatter": "ms-azuretools.vscode-docker"
+  },
+
+  // Golang
+  "[go]": {
+    // Optional: Disable snippets, as they conflict with completion ranking.
+    "editor.snippetSuggestions": "none"
+  },
+  "[go.mod]": {
+    "editor.formatOnSave": true,
+    "editor.codeActionsOnSave": {
+      "source.organizeImports": true
+    }
+  },
+  "go.formatTool": "gofumports",
+  "go.lintTool": "revive",
+  "go.useLanguageServer": true,
+  // "go.coverOnSave": true,
+  // "go.coverageDecorator": {
+  //     "type": "gutter",
+  //     "coveredHighlightColor": "rgba(64,128,128,0.2)",
+  //     "uncoveredHighlightColor": "rgba(128,64,64,0.2)",
+  //     "coveredGutterStyle": "slashgreen",
+  //     "uncoveredGutterStyle": "slashred"
+  // },
+  "go.coverOnSingleTest": true,
+  "go.toolsManagement.autoUpdate": true,
+  "go.addTags": {
+    "tags": "json,xml,form",
+    // "options": "json",
+    "promptForTags": true
+  },
+  // "go.languageServerFlags": [
+  //   "-rpc.trace", // for more detailed debug logging
+  //   "serve",
+  //   "--debug=localhost:6060" // to investigate memory usage, see profiles
+  // ],
+  "gopls": {
+    "formatting.gofumpt": true, // strict-er golang formatting
+    "usePlaceholders": true, // add parameter placeholders when completing a function
+    // Experimental settings
+    "completeUnimported": true, // autocomplete unimported packages
+    "deepCompletion": true, // enable deep completion
+    // If true, enable additional analyses with staticcheck.
+    // Warning: This will significantly increase memory usage.
+    "staticcheck": true,
+    // "importShortcut": "Both", // specifies whether import statements should link to documentation or go to definitions.
+    "ui.navigation.importShortcut": "Both" // specifies whether import statements should link to documentation or go to definitions.
+  },
+
+  // Svelte
+  "[svelte]": {
+    "editor.defaultFormatter": "svelte.svelte-vscode"
+  },
+  "svelte.enable-ts-plugin": true,
+
+  // Dart
+  "[dart]": {
+    "editor.formatOnSave": true,
+    "editor.formatOnType": true,
+    "editor.rulers": [80],
+    "editor.selectionHighlight": false,
+    "editor.suggest.snippetsPreventQuickSuggestions": false,
     "editor.suggestSelection": "first",
-    "editor.scrollBeyondLastLine": false,
-    "editor.cursorBlinking": "solid",
-    "editor.tabCompletion": "on",
-    "files.autoSave": "afterDelay",
-    "files.autoSaveDelay": 60000,
-    "files.trimTrailingWhitespace": true,
-    "breadcrumbs.enabled": true,
-    "explorer.confirmDragAndDrop": false,
+    "editor.tabCompletion": "onlySnippets",
+    "editor.wordBasedSuggestions": false
+  },
 
-    // Icon
-    "workbench.iconTheme": "material-icon-theme",
+  // Javascript React
+  "[javascriptreact]": {
+    "editor.defaultFormatter": "esbenp.prettier-vscode"
+  },
 
-    // Jesus I am so nitpicking my vscode
-    "window.zoomLevel": 0,
+  // Vue
+  "[vue]": {
+  },
 
-    // Telemetry Reporter
-    "telemetry.enableCrashReporter": false,
-    "telemetry.enableTelemetry": false,
+  // Rust
+  "[rust]": {
+    "editor.tabSize": 4,
+    "editor.formatOnSave": true
+  },
+  "rust-client.channel": "stable",
+  "rust-client.rustupPath": "~/.cargo/bin/rustup",
 
-    // Disable bing search
-    "workbench.settings.enableNaturalLanguageSearch": false,
-
-    // Disable Feedback
-    "workbench.statusBar.feedback.visible": false,
-
-    // Git Configuration
-    "git.autofetch": true,
-    "git.confirmSync": false,
-    "git.enableSmartCommit": true,
-    "gitlens.codeLens.enabled": false,
-
-    "explorer.confirmDelete": false,
-    // "explorer.sortOrder": "filesFirst",
-
-    "diffEditor.ignoreTrimWhitespace": false,
-
-    // Terminal Configurations
-    // "terminal.integrated.rendererType": "dom",
-    // "terminal.integrated.fontSize": 13,
-    // GPU Terminal
-    "terminal.integrated.rendererType": "experimentalWebgl",
-    "typescript.updateImportsOnFileMove.enabled": "always",
-    "files.associations": {
-        "*.json": "jsonc"
+  // Vim
+  "vim.incsearch": true,
+  "vim.useSystemClipboard": true,
+  "vim.useCtrlKeys": true,
+  "vim.hlsearch": true,
+  "vim.leader": "<space>",
+  "vim.insertModeKeyBindings": [
+    {
+      "before": ["j", "j"],
+      "after": ["<Esc>"]
+    }
+  ],
+  "vim.normalModeKeyBindingsNonRecursive": [
+    {
+      "before": ["<leader>", "d"],
+      "after": ["d", "d"]
     },
-
-    // YAML Language Configuration
-    "yaml.format.enable": true,
-    "[yaml]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
+    {
+      "before": ["<C-n>"],
+      "after": [":nohl"]
     },
+    // :w to save te file
+    {
+      "before": ["leader", "w"],
+      "commands": ["workbench.action.files.save"]
+    }
+  ],
+  "vim.handleKeys": {
+    "<C-a>": false,
+    "<C-f>": false,
+    "<C-r>": false,
+    "<C-d>": true
+  },
+  // Somehow this prevents hangs ?
+  // https://github.com/VSCodeVim/Vim/issues/3957
+  "vim.foldfix": false,
+  "vim.statusBarColorControl": false,
+  "vim.enableNeovim": true,
+  "vim.neovimPath": "/usr/local/bin/nvim",
+  // "vim.neovimPath": "/usr/bin/nvim", // for Windows
+  "scm.alwaysShowRepositories": true,
 
-    // Helm Template
-    "[helm-template]": {
-        "editor.tabSize": 2,
+  // BetterComment Configuration
+  "better-comments.tags": [
+    {
+      "tag": "!",
+      "color": "#FF2D00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
     },
+    {
+      "tag": "?",
+      "color": "#3498DB",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "todo",
+      "color": "#FF8C00",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    },
+    {
+      "tag": "*",
+      "color": "#98C379",
+      "strikethrough": false,
+      "underline": false,
+      "backgroundColor": "transparent",
+      "bold": false,
+      "italic": false
+    }
+  ],
 
-    // Web
-    "[json]": {
-        "editor.defaultFormatter": "vscode.json-language-features"
-    },
-    "[html]": {
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
+  // Etc...
+  "files.watcherExclude": {
+    "**/.bloop": true,
+    "**/.metals": true,
+    "**/.ammonite": true
+  },
 
-    // Terraform Language Configuration
-    "[terraform]": {
-        "editor.tabSize": 2,
-    },
+  // Not sending metrics to RedHat
+  "redhat.telemetry.enabled": false,
+  "notebook.cellToolbarLocation": {
+    "default": "right",
+    "jupyter-notebook": "left"
+  },
 
-    // Markdown Language Configuration
-    "[markdown]": {
-        "editor.tabSize": 2,
-        // Do not trim whitespaces on markdown file - there might be a breakline character
-        "files.trimTrailingWhitespace": false,
-    },
+  // Co-pilot configurations
+  "github.copilot.enable": {
+    "*": true,
+    "yaml": true,
+    "plaintext": true,
+    "markdown": true,
+    "go": false,
+    "dockerfile": false
+  },
 
-    // Javascript and Typescript
-    "javascript.updateImportsOnFileMove.enabled": "always",
-    "[javascript]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "vscode.typescript-language-features"
-    },
-    "[typescript]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode"
-    },
-    "[typescriptreact]": {
-        "editor.tabSize": 2,
-        "editor.defaultFormatter": "esbenp.prettier-vscode",
-    },
+  "files.autoSave": "afterDelay",
+  "workbench.enableExperiments": false,
 
+  "liveshare.launcherClient": "visualStudioCode",
+  "liveshare.presence": true,
 
-    // "vsintellicode.modify.editor.suggestSelection": "automaticallyOverrodeDefaultValue",
-    "files.exclude": {
-        "**/.classpath": true,
-        "**/.project": true,
-        "**/.settings": true,
-        "**/.factorypath": true
-    },
-
-    // Python
-    "python.jediEnabled": false,
-    "python.pythonPath": "/usr/bin/python3",
-
-    // Golang
-    "go.formatTool": "goimports",
-    "go.useLanguageServer": true,
-    "[go]": {
-        "editor.codeActionsOnSaveTimeout": 3000,
-        "editor.snippetSuggestions": "none",
-        "editor.formatOnSave": true,
-        "editor.codeActionsOnSave": {
-            "source.organizeImports": true,
-        }
-    },
-    // VSCode will complain about the "gopls" settings, but they will still work.
-    "gopls": {
-        "usePlaceholders": true, // add parameter placeholders when completing a function
-        // Experimental settings
-        "completeUnimported": true, // autocomplete unimported packages
-        "deepCompletion": true,     // enable deep completion
-    },
-    "go.languageServerFlags": [
-        "-rpc.trace", // for more detailed debug logging
-        "serve",
-        "--debug=localhost:6060", // to investigate memory usage, see profiles
-    ],
-
-    // Todo Plugin
-    "todohighlight.isEnable": true,
-
-    // For Terraform 0.12
-    // "terraform.indexing": {
-    //     "enabled": false,
-    //     "liveIndexing": false,
-    //     "delay": 500,
-    //     "exclude": [
-    //         ".terraform/**/*",
-    //         "**/.terraform/**/*"
-    //     ]
-    // },
-    // "terraform.languageServer": {
-    //     "enabled": true,
-    //     "args": []
-    // },
+  // Neovim configrations
+  "vim.neovimUseConfigFile": true,
+  "vscode-neovim.neovimExecutablePaths.darwin": "/usr/local/bin/nvim",
+  "vim.gdefault": true,
+  "vim.highlightedyank.enable": true,
+  "vim.smartRelativeLine": true,
 }

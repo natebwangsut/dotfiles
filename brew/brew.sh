@@ -1,6 +1,9 @@
 #!/bin/sh
 
 #
+# brew.sh
+# @natebwangsut <nate.bwangsut@gmail.com>
+# ---
 # Installing packages from brew
 #
 

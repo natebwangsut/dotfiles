@@ -4,6 +4,23 @@ A collection of configurations for developing environment
 
 ## Usage
 
+When cloning this repository you must clone them into `~/github/` for all the scripts to be functioning
+
+> Base structure for dotfiles
+
+```text
+~/
+├── .config/
+│   ├── fish/               -> todo: configure fish shell
+│   └── nvim/
+│       └── lua/
+│           └── custom/     -> symlink to ~/github/dotfiles/.config/nvchad/custom
+├── .vim/                   -> symlink to ~/github/dotfiles/.vim
+├── .vimrc                  -> symlink to ~/github/dotfiles/.vim/init.vim
+└── .zshrc                  -> symlink to ~/github/dotfiles/zsh/.zshrc
+```
+
+
 - Run [scripts/macOS.sh](./scripts/macOS.sh) to define macOS preferences.
 - Run [brew/install.sh](./brew/install.sh) from the local repository after the homebrew installation.
 
@@ -13,11 +30,27 @@ A collection of configurations for developing environment
 
 - Symlink all configurations with [scripts/symlinks.sh](./scripts/symlinks.sh)
 
+## Machines
+
+Each specific machine type setups.
+
+### Debian
+
+Debian based machine can have a look at `apt` folder and run the script to initialised setup
+
+### macOS
+
+macOS machines needed to setup the devices default configuration via `macOS/defaults.sh` then proceed to setup environments via `brew` on `brew` folder
+
 ## Components
 
-### Zsh (Z-Shell)
+### Fish (fish shell)
 
-TODO: Zsh speciic details
+> TODO: Experimenting fish
+
+### Zsh (z-shell)
+
+> TODO: Zsh speciic details
 
 ### Vim
 

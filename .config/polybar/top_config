@@ -1,7 +1,10 @@
 
-; ~/.config/polybar/top_config
-; Nate Bhurinat Wangsutthitham
-; @natebwangsut | <nate.bwangsut@gmail.com>
+;
+; top_config
+; @natebwangsut <nate.bwangsut@gmail.com>
+; ---
+; Polybar configuration
+;
 
 [colors]
 ;background = ${xrdb:color0:#222}

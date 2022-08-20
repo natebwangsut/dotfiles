@@ -1,4 +1,11 @@
-#!/usr/bin/env sh
+#!/bin/sh
+
+#
+# launch.sh
+# @natebwangsut <nate.bwangsut@gmail.com>
+# ---
+# Polybar init script
+#
 
 # Terminate already running bar instances
 killall -q polybar
