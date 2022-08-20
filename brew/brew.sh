@@ -7,6 +7,7 @@
 # Installing packages from brew
 #
 
+# Update tabs before starting the installation scripts
 brew update && brew upgrade
 
 ################################################################################
@@ -17,32 +18,33 @@ brew update && brew upgrade
 brew tap beeftornado/rmtree
 
 # Utilities
-brew install zsh
-brew install coreutils
+brew install coreutils    # use gnu bins not apple precomplied
+brew install gnu-sed      # use gnu sed not apple's
+brew install gnupg
+brew install wget
+brew install jq
+brew install yq
+brew install fzf
+brew install ripgrep
 brew install vim
 brew install neovim
-brew install wget
-brew install ripgrep
-brew install gnupg
-brew install gnu-sed
-
-brew install htop
-brew install glances
+brew install zsh          # zshell
+brew install htop         # machine performance monitoring tool
+brew install glances      # machine performance monitoring tool
 
 # Containers
 brew install helm
 brew install docker
 brew install kubectl kubectx
+brew install colima       # container runtime for macOS
 
 # Development
+brew install rustup
 brew install go
 brew install python
 brew install nvm
 brew install node
 brew install typescript
-
-# CLI Tools
-brew install jq yq
 
 ################################################################################
 # Casks

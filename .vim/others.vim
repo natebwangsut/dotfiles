@@ -1,5 +1,8 @@
-" Others
+"
+" others.vim
+" ---
 " Auto read the file if its were to changed from outside the vim
+"
 set autoread
 
 " Remove whitespaces on save

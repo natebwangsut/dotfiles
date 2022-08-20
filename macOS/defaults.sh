@@ -4,7 +4,7 @@
 # defaults.sh
 # @natebwangsut <nate.bwangsut@gmail.com>
 # ---
-# Setup macOS configurations
+# Setup macOS developing machine, configuring defaults and system configurations
 #
 
 # Better Bluetooth audio quality

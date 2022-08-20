@@ -1,3 +1,7 @@
+"
+" plug.vim
+"
+
 " vim-plug
 call plug#begin('~/.vim/plugged')
 

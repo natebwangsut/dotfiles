@@ -1,3 +1,9 @@
+"
+" statusline.vim
+" ---
+" Custom statusline configuration for speed and simplicity.
+"
+
 " Statusline
 set noshowmode
 let g:currentmode = {
@@ -66,6 +72,7 @@ function! ReadOnly()
     return ''
   else
     return ''
+  endif
 endfunction
 
 function! GitInfo()
@@ -74,6 +81,7 @@ function! GitInfo()
     return ' '.fugitive#head()
   else
     return ''
+  endif
 endfunction
 
 set laststatus=2

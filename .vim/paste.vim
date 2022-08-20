@@ -1,7 +1,5 @@
 "
-" Nate Bhurinat Wangsutthitham
-" @natebwangsut | @b.wangsutthitham <nate.bwangsut@gmail.com>
-" https://github.com/natebwangsut/
+" paste.vim
 "
 
 " Use <F2> to toggle paste mode (insert, INSERT(paste) and INSERT)

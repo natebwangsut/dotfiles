@@ -94,7 +94,7 @@ case "$(uname -s)" in
 
         # For Go
         export GOPATH="${HOME}/.go"
-	export GOROOT="$(brew --prefix)/opt/go/libexec"
+	    export GOROOT="$(brew --prefix)/opt/go/libexec"
         export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
         # Installing MySQL client without MySQL server
