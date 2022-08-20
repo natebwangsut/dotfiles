@@ -41,15 +41,6 @@ export LC_ALL=$LANG
 # Declare preferreed docker platform
 export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
-# Use GNU bins instead of BSD bins
-export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix)/opt/gnu-indent/libexec/gnubin:$PATH"
-export PATH="$(brew --prefix)/opt/gnu-getopt/bin:$PATH"
-export PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
-
 # Turn colour on for all 'ls' command
 alias ls='ls --color=auto'
 
@@ -91,6 +82,15 @@ case "$(uname -s)" in
     # +50 MS for load time
     Darwin)
         #echo 'macOS'
+
+        # Use GNU bins instead of BSD bins
+        export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
+        export PATH="$(brew --prefix)/opt/findutils/libexec/gnubin:$PATH"
+        export PATH="$(brew --prefix)/opt/gnu-sed/libexec/gnubin:$PATH"
+        export PATH="$(brew --prefix)/opt/gnu-tar/libexec/gnubin:$PATH"
+        export PATH="$(brew --prefix)/opt/gnu-indent/libexec/gnubin:$PATH"
+        export PATH="$(brew --prefix)/opt/gnu-getopt/bin:$PATH"
+        export PATH="$(brew --prefix)/opt/grep/libexec/gnubin:$PATH"
 
         # For Go
         export GOPATH="${HOME}/.go"
