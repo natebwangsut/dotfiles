@@ -31,6 +31,7 @@ brew install neovim
 brew install zsh          # zshell
 brew install htop         # machine performance monitoring tool
 brew install glances      # machine performance monitoring tool
+brew install git-cliff    # changelog generator
 
 # Containers
 brew install helm
@@ -41,7 +42,7 @@ brew install colima       # container runtime for macOS
 # Development
 brew install rustup
 brew install go
-brew install python
+brew install python pipenv
 brew install nvm
 brew install node
 brew install typescript

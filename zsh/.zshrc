@@ -186,3 +186,8 @@ zinit for \
 # For performance debugging
 # zprof
 ### End of Zinit's installer chunk
+
+# pnpm
+export PNPM_HOME="/Users/bwangsutthit/Library/pnpm"
+export PATH="$PNPM_HOME:$PATH"
+# pnpm end
