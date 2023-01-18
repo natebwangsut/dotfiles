@@ -191,3 +191,6 @@ zinit for \
 export PNPM_HOME="/Users/bwangsutthit/Library/pnpm"
 export PATH="$PNPM_HOME:$PATH"
 # pnpm end
+
+# GCP
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
