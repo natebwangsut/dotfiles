@@ -94,7 +94,7 @@ case "$(uname -s)" in
 
         # For Go
         export GOPATH="${HOME}/.go"
-	    export GOROOT="$(brew --prefix)/opt/go/libexec"
+        export GOROOT="$(brew --prefix)/opt/go/libexec"
         export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
         # Installing MySQL client without MySQL server
@@ -182,6 +182,10 @@ zinit for \
     light-mode zdharma-continuum/z-a-as-monitor \
                zdharma-continuum/z-a-patch-dl \
                zdharma-continuum/z-a-bin-gem-node
+
+# fzf history search
+zinit ice lucid wait'0'
+zinit light joshskidmore/zsh-fzf-history-search
 
 # For performance debugging
 # zprof
