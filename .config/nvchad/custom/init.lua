@@ -1,10 +1,7 @@
--- example file i.e lua/custom/init.lua
+-- local autocmd = vim.api.nvim_create_autocmd
 
-
--- MAPPINGS
-local map = nvchad.map
-
-map("n", "<leader>cc", ":Telescope <CR>")
-map("n", "<leader>q", ":q <CR>")
-
--- require("my autocmds file") or just declare them here
+-- Auto resize panes when resizing nvim window
+-- autocmd("VimResized", {
+--   pattern = "*",
+--   command = "tabdo wincmd =",
+-- })

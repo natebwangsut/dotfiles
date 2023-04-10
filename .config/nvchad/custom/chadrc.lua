@@ -1,27 +1,24 @@
--- Just an example, supposed to be placed in /lua/custom/
+---@type ChadrcConfig
+local M = {}
 
-local M = {
-}
+-- Path to overriding theme and highlights files
+local highlights = require "custom.highlights"
 
--- make sure you maintain the structure of `core/default_config.lua` here,
--- example of changing theme:
-
-local userPlugins = require "custom.plugins"
-
-M.plugins = {
-   user = userPlugins,
-   override = {
-      ["NvChad/ui"] = {
-         statusline = {
-            separator_style = "block",
-         },
-      },
-   }
-}
+M.plugins = "custom.plugins"
 
 M.ui = {
    theme = "vscode_dark",
+   theme_toggle = { "onedark", "one_light" },
+   hl_override = highlights.override,
+   hl_add = highlights.add,
+   statusline = {
+      theme = "vscode_colored",
+      separator_style = "block",
+   },
 }
 
+-- check core.mappings for table structure
+M.mappings = require "custom.mappings"
+
 return M
-   
+
