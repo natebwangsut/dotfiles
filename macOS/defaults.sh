@@ -48,4 +48,4 @@ mkdir -p ~/Screenshots
 defaults write com.apple.screencapture location ~/Screenshots
 
 # Disable Apple's Spotlight indexing
-sudo mdutil -a -i off
+# sudo mdutil -a -i off

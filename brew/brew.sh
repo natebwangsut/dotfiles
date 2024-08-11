@@ -47,6 +47,10 @@ brew install nvm
 brew install node
 brew install typescript
 
+# bun
+brew tap oven-sh/bun
+brew install bun
+
 ################################################################################
 # Casks
 ################################################################################
@@ -104,6 +108,7 @@ brew install font-cascadia-code-pl
 brew install font-dm-mono
 brew install font-fira-code
 brew install font-fira-code-nerd-font
+brew install font-figtree
 brew install font-inconsolata
 brew install font-inconsolata-nerd-font
 brew install font-jetbrains-mono

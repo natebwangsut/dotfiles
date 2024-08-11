@@ -12,4 +12,7 @@ sudo add-apt-repository ppa:neovim-ppa/unstable
 sudo apt update
 
 # Install nodejs
-curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.39.1/install.sh | bash
+curl -o- https://raw.githubusercontent.com/nvm-sh/nvm/v0.40.0/install.sh | bash
+
+# Install ripgrep
+sudo apt-get install ripgrep

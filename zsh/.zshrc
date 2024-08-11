@@ -22,7 +22,7 @@ export HISTSIZE=100000
 # save history after logout
 export SAVEHIST=100000
 # history file
-export HISTFILE=~/.zhistory
+export HISTFILE=$HOME/.zhistory
 # append into history file
 setopt INC_APPEND_HISTORY
 # save only one command if 2 common are same and consistent
@@ -39,7 +39,7 @@ export LANG="en_US.UTF-8"
 export LC_ALL=$LANG
 
 # Declare preferreed docker platform
-export DOCKER_DEFAULT_PLATFORM=linux/amd64
+# export DOCKER_DEFAULT_PLATFORM=linux/amd64
 
 # Turn colour on for all 'ls' command
 alias ls='ls --color=auto'
@@ -70,8 +70,8 @@ alias python=python3  # I use python3
 #     fi
 # }
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# To customize prompt, run `p10k configure` or edit $HOME/.p10k.zsh.
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 
 
 ################################################################################
@@ -81,7 +81,7 @@ alias python=python3  # I use python3
 case "$(uname -s)" in
     # +50 MS for load time
     Darwin)
-        #echo 'macOS'
+        # macOS
 
         # Use GNU bins instead of BSD bins
         export PATH="$(brew --prefix)/opt/coreutils/libexec/gnubin:$PATH"
@@ -97,8 +97,10 @@ case "$(uname -s)" in
         export GOROOT="$(brew --prefix)/opt/go/libexec"
         export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
 
-        # Installing MySQL client without MySQL server
-        # brew install mysql-client
+        # pnpm
+        export PNPM_HOME="$HOME/Library/pnpm"
+        export PATH="$PNPM_HOME:$PATH"
+        # pnpm end
 
         # Nvm
         export NVM_DIR="$HOME/.nvm"
@@ -109,7 +111,7 @@ case "$(uname -s)" in
 
     #
     Linux)
-        #echo 'Linux'
+        # Linux
         export GOPATH="${HOME}/.go"
         #export GOROOT="${HOME}/.go/root"
         export PATH="$PATH:${GOPATH}/bin:${GOROOT}/bin"
@@ -123,7 +125,7 @@ case "$(uname -s)" in
     #
     #
     CYGWIN*|MINGW32*|MSYS*|MINGW*)
-        #echo 'MS Windows'
+        # Windows
         ;;
 
     # Add here more strings to compare
@@ -136,7 +138,7 @@ esac
 # Somehow this needed to be bind else vscode integrated terminal would not work
 bindkey '^R' history-incremental-search-backward
 
-### Added by Zinit's installer
+### Added by zinit's installer
 if [[ ! -f $HOME/.zinit/bin/zinit.zsh ]]; then
     print -P "%F{33}▓▒░ %F{220}Installing %F{33}DHARMA%F{220} Initiative Plugin Manager (%F{33}zdharma/zinit%F{220})…%f"
     command mkdir -p "$HOME/.zinit" && command chmod g-rwX "$HOME/.zinit"
@@ -168,9 +170,9 @@ zinit snippet PZTM::completion
 # plugins with a single command. For more information see:
 # https://zdharma-continuum.github.io/zinit/wiki/For-Syntax/
 zinit for \
-    light-mode  zsh-users/zsh-autosuggestions \
-    light-mode  zdharma-continuum/fast-syntax-highlighting \
-                zdharma-continuum/history-search-multi-word
+    light-mode zsh-users/zsh-autosuggestions \
+    light-mode zdharma-continuum/fast-syntax-highlighting \
+               zdharma-continuum/history-search-multi-word
 
 # Shallow clone then load p10k prompts
 zinit ice depth=1; zinit light romkatv/powerlevel10k
@@ -187,14 +189,17 @@ zinit for \
 zinit ice lucid wait'0'
 zinit light joshskidmore/zsh-fzf-history-search
 
+# GCP
+export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+
 # For performance debugging
 # zprof
 ### End of Zinit's installer chunk
 
-# pnpm
-export PNPM_HOME="/Users/bwangsutthit/Library/pnpm"
-export PATH="$PNPM_HOME:$PATH"
-# pnpm end
+# bun completions
+# [ -s "$HOME/.bun/_bun" ] && source "$HOME/.bun/_bun"
 
-# GCP
-export USE_GKE_GCLOUD_AUTH_PLUGIN=True
+# Set up fzf key bindings and fuzzy completion
+source <(fzf --zsh)
+
+source $HOME/.docker/init-zsh.sh || true # Added by Docker Desktop

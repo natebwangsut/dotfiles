@@ -23,11 +23,6 @@ When cloning this repository you must clone them into `~/github/` for all the sc
 
 - Run [scripts/macOS.sh](./scripts/macOS.sh) to define macOS preferences.
 - Run [brew/install.sh](./brew/install.sh) from the local repository after the homebrew installation.
-
-```zsh
-./brew/install.sh
-```
-
 - Symlink all configurations with [scripts/symlinks.sh](./scripts/symlinks.sh)
 
 ## Machines
@@ -36,7 +31,7 @@ Each specific machine type setups.
 
 ### Debian
 
-Debian based machine can have a look at `apt` folder and run the script to initialised setup
+Debian based machine can have a look at `apt` folder and run the script to initialised setup. Note that debian setup is compatible with WSL2 as I mainly use a Windows machine.
 
 ### macOS
 
@@ -50,7 +45,9 @@ macOS machines needed to setup the devices default configuration via `macOS/defa
 
 ### Zsh (z-shell)
 
-> TODO: Zsh speciic details
+Z-shell is a preferred shell, originally I was using `.preztorc` but as time progress I wanted to setup my own list so hence, custom `.zshrc` with some plugins that are being managed by `zinit`.
+
+zinit allows plugins to be loaded much faster and it is very simple to maintain the configuration. zinit also has the cability to source remote plugins (e.g., from Prezzinit to and Prezto modules).
 
 ### Vim
 
@@ -60,7 +57,7 @@ TODO: Vim specific details
 
 ### Neovim / Nvim
 
-Since we've migrated to nvchad framework, please see [.config/nvchad](.config/nvchad) folder.
+Since we've migrated to `nvchad` framework, please see [.config/nvchad](.config/nvchad) folder.
 
 ### Git
 
