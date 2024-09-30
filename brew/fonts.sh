@@ -17,6 +17,7 @@ brew install --cask font-dm-sans
 brew install --cask font-inter
 brew install --cask font-lexend
 brew install --cask font-poppins
+brew install --cask font-geist
 
 # Monospace
 brew install --cask font-cascadia-code
@@ -27,3 +28,4 @@ brew install --cask font-inconsolata
 brew install --cask font-jetbrains-mono
 brew install --cask font-roboto-mono
 brew install --cask font-symbols-only-nerd-font
+brew install --cask font-geist-mono-nerd-font
