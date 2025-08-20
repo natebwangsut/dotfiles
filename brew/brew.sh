@@ -32,6 +32,7 @@ brew install zsh          # zshell
 brew install htop         # machine performance monitoring tool
 brew install glances      # machine performance monitoring tool
 brew install git-cliff    # changelog generator
+brew install git-delta    # diff viewer
 
 # Containers
 brew install helm
